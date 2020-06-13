@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                         <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nej-Z7-2Kq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tune" selectedImage="Tune" id="lv3-5X-OeI"/>
+                    <tabBarItem key="tabBarItem" title="" image="Tune" selectedImage="Tune" id="lv3-5X-OeI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCz-Uj-aYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,7 +51,7 @@
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4g5-W3-bmK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="calen" selectedImage="Calendar" id="jfJ-s2-ARh"/>
+                    <tabBarItem key="tabBarItem" title="" image="Calendar" selectedImage="Calendar" id="jfJ-s2-ARh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FE0-up-n3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,11 +145,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Calendar" width="96" height="96"/>
-        <image name="Tune" width="90" height="90"/>
-        <image name="calen" width="16" height="16"/>
-        <image name="checkmark.rectangle" catalog="system" width="64" height="48"/>
-        <image name="timer" catalog="system" width="64" height="62"/>
-        <image name="tune" width="16" height="16"/>
+        <image name="Calendar" width="24" height="24"/>
+        <image name="Tune" width="30" height="30"/>
+        <image name="checkmark.rectangle" catalog="system" width="64" height="46"/>
+        <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
 </document>

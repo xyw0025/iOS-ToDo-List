@@ -16,6 +16,7 @@
 		263B2C8524949D6B003D25C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263B2C8324949D6B003D25C1 /* LaunchScreen.storyboard */; };
 		263B2C9024949D6C003D25C1 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C8F24949D6C003D25C1 /* ToDoListTests.swift */; };
 		263B2C9B24949D6C003D25C1 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */; };
+		A263D56924953F2E00AEEE78 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263D56824953F2E00AEEE78 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		263B2C9624949D6C003D25C1 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		263B2C9C24949D6C003D25C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A263D56824953F2E00AEEE78 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				263B2C7524949D65003D25C1 /* AppDelegate.swift */,
+				A263D56824953F2E00AEEE78 /* TabBarViewController.swift */,
 				263B2C7724949D65003D25C1 /* SceneDelegate.swift */,
 				263B2C7924949D65003D25C1 /* ViewController.swift */,
 				263B2C7B24949D65003D25C1 /* Main.storyboard */,
@@ -265,6 +268,7 @@
 				263B2C7A24949D65003D25C1 /* ViewController.swift in Sources */,
 				263B2C7624949D65003D25C1 /* AppDelegate.swift in Sources */,
 				263B2C7824949D65003D25C1 /* SceneDelegate.swift in Sources */,
+				A263D56924953F2E00AEEE78 /* TabBarViewController.swift in Sources */,
 				263B2C8024949D65003D25C1 /* ToDoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
