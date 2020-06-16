@@ -13,103 +13,35 @@ class ViewController: UIViewController {
     var menu: SideMenuNavigationController?
 
       override func viewDidLoad() {
-          super.viewDidLoad()
-          navigationController?.hideNavigationItemBackground()
-          view.backgroundColor = .white
-          self.navigationController?.isNavigationBarHidden = true
-          menu = SideMenuNavigationController(rootViewController: MenuListController())
-          menu?.leftSide = true
-          menu?.setNavigationBarHidden(true, animated: false)
-          SideMenuManager.default.leftMenuNavigationController = menu
-          menu?.statusBarEndAlpha = 0
-          SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-      }
-}
-
-
-
-
-//enum items: String {
-//    case index = "Index"
-////        return "Index"
-//    case today = "Today"
-////        return
-//    case setting = "Setting"
-////        return "Setting"
-//}
-
-class MenuListController: UITableViewController {
-    var items = ["Index", "Today", "Settings"]
-    // FF8552
-    var darkColor = UIColor(hex: "#FF8552")
-
-    override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor.clear
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = darkColor
+        if isDarkMode() {print("isDarkMode")} else {
+            print("isntDarkMode")
+        }
+
+        navigationController?.hideNavigationItemBackground()
+        view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        menu?.statusBarEndAlpha = 0
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+      }
 
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
 
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row]
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = darkColor
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath {
-        case [0,0]:
-            print("0")
-        case [0,1]:
-            print("1")
-        default:
-            print("3")
+    func isDarkMode() -> Bool {
+        switch traitCollection.userInterfaceStyle {
+        case .light: return false
+        case .dark: return true
+        case .unspecified: return false
+        @unknown default:
+            return false
         }
-//        print(indexPath)
-
     }
 }
 
 
-extension UIColor{
-    public  convenience init(hex : String) {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
 
-        if ((cString.count) != 6) {
-            self.init(red: 1, green: 1, blue: 1, alpha: 1)
-            return
-        }
-
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-
-        self.init(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-
-}
-extension UINavigationController {
-    func hideNavigationItemBackground() {
-        self.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
-        self.view.backgroundColor = UIColor.clear
-    }
-}
