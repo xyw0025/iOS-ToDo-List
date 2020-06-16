@@ -121,9 +121,11 @@ extension SettingCell {
     }
     private var cellbackgroundHeight: CGFloat  { return 65 }
 
+
+
     private struct LightModeColor {
         static var cellColor: UIColor  { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.2057737586) }
-        static var cellTriggerdColor: UIColor { return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) }
+        static var cellTriggerdColor: UIColor { return #colorLiteral(red: 1, green: 0.5215686275, blue: 0.3215686275, alpha: 0.4017283818) }
         static var textColor: UIColor {return .black}
     }
     struct DarkModeColor {

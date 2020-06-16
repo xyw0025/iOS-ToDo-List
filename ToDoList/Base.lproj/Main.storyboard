@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Mq-Up-IhJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="timer" catalog="system" id="3RL-Re-qME"/>
+                    <tabBarItem key="tabBarItem" title="" image="Timer" selectedImage="Timer" id="3RL-Re-qME"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSS-lA-ufm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -126,7 +126,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bKq-v4-kKh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="checkmark.rectangle" catalog="system" id="uIM-ra-pLh" userLabel="To Do"/>
+                    <tabBarItem key="tabBarItem" title="" image="TickBox" selectedImage="TickBox" id="uIM-ra-pLh" userLabel="To Do"/>
                     <navigationItem key="navigationItem" title="To Do List" id="22F-k0-bxr">
                         <barButtonItem key="leftBarButtonItem" title="Single" id="abf-HL-WvG"/>
                     </navigationItem>
@@ -160,8 +160,8 @@
     </scenes>
     <resources>
         <image name="Calendar" width="24" height="24"/>
+        <image name="TickBox" width="26" height="26"/>
+        <image name="Timer" width="24" height="24"/>
         <image name="Tune" width="30" height="30"/>
-        <image name="checkmark.rectangle" catalog="system" width="64" height="46"/>
-        <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
 </document>
