@@ -20,35 +20,32 @@ class ViewController: UIViewController {
           menu = SideMenuNavigationController(rootViewController: MenuListController())
           menu?.leftSide = true
           menu?.setNavigationBarHidden(true, animated: false)
-
           SideMenuManager.default.leftMenuNavigationController = menu
           menu?.statusBarEndAlpha = 0
-
-
           SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-          // Do any additional setup after loading the view.
       }
-
-
-
 }
 
 
 
 
+//enum items: String {
+//    case index = "Index"
+////        return "Index"
+//    case today = "Today"
+////        return
+//    case setting = "Setting"
+////        return "Setting"
+//}
 
 class MenuListController: UITableViewController {
     var items = ["Index", "Today", "Settings"]
-
     // FF8552
     var darkColor = UIColor(hex: "#FF8552")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.clear
-
-
+//        self.view.backgroundColor = UIColor.clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.backgroundColor = darkColor
         self.navigationController?.isNavigationBarHidden = true
@@ -69,6 +66,16 @@ class MenuListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath {
+        case [0,0]:
+            print("0")
+        case [0,1]:
+            print("1")
+        default:
+            print("3")
+        }
+//        print(indexPath)
+
     }
 }
 
