@@ -16,7 +16,7 @@ class MenuListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor.clear
+        self.view.backgroundColor = UIColor.clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.backgroundColor = darkColor
         self.navigationController?.isNavigationBarHidden = true
