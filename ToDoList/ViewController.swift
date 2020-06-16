@@ -31,6 +31,10 @@ class ViewController: UIViewController {
 
 
 
+
+}
+
+extension UIViewController {
     func isDarkMode() -> Bool {
         switch traitCollection.userInterfaceStyle {
         case .light: return false
@@ -41,7 +45,5 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
 
 

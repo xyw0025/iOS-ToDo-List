@@ -34,28 +34,30 @@ class SettingCell: UITableViewCell {
         title = item.title
         icon = item.icon
     }
-
+    func setTheme(isDarkMode: Bool) {
+//        print(isDarkMode)
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
         self.addSubview(cellBackground)
         self.addSubview(mainImageView)
         self.addSubview(titleLabel)
-
+        
         setImageConstraints()
         setTitleConstraints()
         setBackgroundConstraints()
     }
-
+    // table cell's color: when the cell is pressed & and the cell is not triggered
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         if highlighted == true {
-            cellBackground.backgroundColor = cellTriggerdColor
+            cellBackground.backgroundColor = LightModeColor.cellTriggerdColor
         } else {
-            cellBackground.backgroundColor = cellColor
+            cellBackground.backgroundColor = LightModeColor.cellColor
         }
     }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -79,6 +81,9 @@ class SettingCell: UITableViewCell {
     }
 
     func renderText() {
+        if (true) {
+            titleLabel.textColor = LightModeColor.textColor
+        }
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.numberOfLines = 0
     }
@@ -115,9 +120,15 @@ extension SettingCell {
         return bounds.size.height * SizeRatio.cornerRadiusToBoundsHeight
     }
     private var cellbackgroundHeight: CGFloat  { return 65 }
-    private var cellColor: UIColor  { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.2057737586) }
-    private var cellTriggerdColor: UIColor { return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) }
+
+    private struct LightModeColor {
+        static var cellColor: UIColor  { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.2057737586) }
+        static var cellTriggerdColor: UIColor { return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) }
+        static var textColor: UIColor {return .black}
+    }
+    struct DarkModeColor {
+
+    }
 
 }
-
 

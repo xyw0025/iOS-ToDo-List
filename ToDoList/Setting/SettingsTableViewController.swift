@@ -11,7 +11,6 @@ import SideMenu
 
 class SettingsTableViewController: UIViewController {
     var menu: SideMenuNavigationController?
-
     var tableView = UITableView()
     var items = [Item]()
     var someRandomText = UILabel()
@@ -19,16 +18,17 @@ class SettingsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-
         items = fetchItems()
         configureTableView()
         configureTextLabel()
         setTableViewDelegates()
         renderSideMenu()
+
     }
 
-    func renderSideMenu() {
 
+
+    func renderSideMenu() {
         navigationController?.hideNavigationItemBackground()
         view.backgroundColor = .white
         self.navigationController?.isNavigationBarHidden = true
@@ -71,12 +71,16 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
         cell.selectionStyle = .none
         let item = items[indexPath.row]
         cell.setItems(to: item)
+//
+//        if cell.title == "About" {
+//            cell.accessoryView =
+//
+//        }
         return cell
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-            tableView.deselectRow(at: indexPath, animated: false)
-
+//            tableView.deselectRow(at: indexPath, animated: false)
 
     }
 }
