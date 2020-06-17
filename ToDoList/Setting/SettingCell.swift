@@ -52,9 +52,9 @@ class SettingCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         if highlighted == true {
-            cellBackground.backgroundColor = LightModeColor.cellTriggerdColor
+            cellBackground.backgroundColor = UIColor.LightModeColor.cellTriggerdColor
         } else {
-            cellBackground.backgroundColor = LightModeColor.cellColor
+            cellBackground.backgroundColor = UIColor.LightModeColor.cellColor
         }
     }
 
@@ -75,19 +75,17 @@ class SettingCell: UITableViewCell {
         cellBackground.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         cellBackground.heightAnchor.constraint(equalToConstant: cellbackgroundHeight).isActive = true
         cellBackground.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-
 //        cellBackground.widthAnchor.constraint(equalTo: widthAnchor, constant: 20).isActive = true
 
     }
 
     func renderText() {
         if (true) {
-            titleLabel.textColor = LightModeColor.textColor
+            titleLabel.textColor = UIColor.LightModeColor.textColor
         }
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.numberOfLines = 0
     }
-
 
     func setImageConstraints() {
 
@@ -121,16 +119,6 @@ extension SettingCell {
     }
     private var cellbackgroundHeight: CGFloat  { return 65 }
 
-
-
-    private struct LightModeColor {
-        static var cellColor: UIColor  { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.2057737586) }
-        static var cellTriggerdColor: UIColor { return #colorLiteral(red: 1, green: 0.5215686275, blue: 0.3215686275, alpha: 0.4017283818) }
-        static var textColor: UIColor {return .black}
-    }
-    struct DarkModeColor {
-
-    }
-
 }
+
 

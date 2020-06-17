@@ -17,7 +17,6 @@ class SettingsTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         items = fetchItems()
         configureTableView()
         configureTextLabel()
@@ -26,7 +25,14 @@ class SettingsTableViewController: UIViewController {
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as? settingItemsTableController
 
+        if let row = tableView.indexPathForSelectedRow?.row{
+            controller?.settingTitle = items[row].title
+        }
+
+    }
 
     func renderSideMenu() {
         navigationController?.hideNavigationItemBackground()
@@ -42,6 +48,7 @@ class SettingsTableViewController: UIViewController {
 
     func configureTableView() {
         view.addSubview(tableView)
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = 80
         tableView.register(SettingCell.self, forCellReuseIdentifier: "settingCell")
         tableView.pin(to: view)
@@ -79,6 +86,13 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let content = SettingItemsViewController()
+
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "secondPage") {
+            controller.modalPresentationStyle = .fullScreen
+            present(controller, animated: true, completion: nil)
+        }
+//        self.present(content, animated: true, completion: nil)
 
 //            tableView.deselectRow(at: indexPath, animated: false)
 
@@ -97,3 +111,5 @@ extension SettingsTableViewController {
         return [item1, item2]
     }
 }
+// TODO: entering the cell
+

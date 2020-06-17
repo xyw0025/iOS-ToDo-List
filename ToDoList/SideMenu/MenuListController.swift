@@ -11,27 +11,33 @@ import SideMenu
 
 class MenuListController: UITableViewController {
     var items = ["Index", "Today", "Settings"]
-    // FF8552
-    var darkColor = UIColor(hex: "#FF8552")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.backgroundColor = darkColor
         self.navigationController?.isNavigationBarHidden = true
+        configureTableView()
 
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
+    func configureTableView() {
 
+        tableView.backgroundColor = UIColor.theme
+
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.rowHeight = 80
+//        tableView.pin(to: view)
+    }
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = items[indexPath.row]
         cell.textLabel?.textColor = .white
-        cell.backgroundColor = darkColor
+        cell.backgroundColor = UIColor.theme
         return cell
     }
 
@@ -59,3 +65,6 @@ extension UINavigationController {
         self.view.backgroundColor = UIColor.clear
     }
 }
+// TODO: Constraints
+// TODO: highlight only cell title when triggered
+// TODO: segue

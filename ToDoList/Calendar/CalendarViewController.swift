@@ -27,17 +27,19 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         setTableViewDelegates()
     }
     func renderSideMenu() {
-        navigationController?.hideNavigationItemBackground()
-        view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = true
+//        navigationController?.hideNavigationItemBackground()
+//        view.backgroundColor = .white
+//        self.navigationController?.isNavigationBarHidden = true
         menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: false)
+//        menu?.setNavigationBarHidden(true, animated: false)
         SideMenuManager.default.leftMenuNavigationController = menu
         menu?.statusBarEndAlpha = 0
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
     func configureTableView() {
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+
         view.addSubview(tableView)
         tableView.rowHeight = 80
         tableView.register(DailyTaskCell.self, forCellReuseIdentifier: "DailyTaskCell")
@@ -54,32 +56,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
 
 
 }
-extension FSCalendar {
-    func customizeCalenderAppearance() {
-        self.backgroundColor = .white
-        self.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesSingleUpperCase]
-
-//        self.appearance.headerTitleFont      = UIFont.init(name: Fonts.BalloRegular, size: 18)
-//        self.appearance.weekdayFont          = UIFont.init(name: Fonts.RalewayRegular, size: 16)
-//        self.appearance.titleFont            = UIFont.init(name: Fonts.RalewayRegular, size: 16)
-
-//        self.appearance.headerTitleColor     =
-////        self.appearance.weekdayTextColor     = Colors.topTabBarSelectedColor
-//        self.appearance.eventDefaultColor    =
-//        self.appearance.selectionColor       =
-////        self.appearance.titleSelectionColor  = Colors.NavTitleColor
-//
-//
-//        self.appearance.todayColor           =
-////        self.appearance.todaySelectionColor  = Colors.purpleColor
-//
-//        self.appearance.headerMinimumDissolvedAlpha = 0.0 // Hide Left Right Month Name
-    }
-
-
-}
-
-
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,8 +80,8 @@ struct Task {
     var title: String
     var content: String
 //    var date: date
-    // TODO: data declaration
 }
+
 
 extension CalendarViewController {
 //    隨便生ㄉdata
@@ -115,3 +91,6 @@ extension CalendarViewController {
         return [day1, day2]
     }
 }
+
+// TODO: date declaration
+// TODO: clean renderSideMenu

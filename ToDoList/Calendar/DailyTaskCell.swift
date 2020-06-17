@@ -11,7 +11,6 @@ import UIKit
 class DailyTaskCell: UITableViewCell {
     var title: String?
     var content: String?
-//    var icon: UIImage?
 
     var cellBackground: UIView = {
         var background = UIView()
@@ -24,8 +23,6 @@ class DailyTaskCell: UITableViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-
-
 
     func setTask(to task: Task) {
         title = task.title
@@ -44,19 +41,19 @@ class DailyTaskCell: UITableViewCell {
         setTitleConstraints()
         setBackgroundConstraints()
     }
+
     // table cell's color: when the cell is pressed & and the cell is not triggered
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         if highlighted == true {
-            cellBackground.backgroundColor = LightModeColor.cellTriggerdColor
+            cellBackground.backgroundColor = UIColor.LightModeColor.cellTriggerdColor
         } else {
-            cellBackground.backgroundColor = LightModeColor.cellColor
+            cellBackground.backgroundColor = UIColor.LightModeColor.cellColor
         }
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
         if let title = title {
             titleLabel.text = title
         }
@@ -70,13 +67,11 @@ class DailyTaskCell: UITableViewCell {
         cellBackground.heightAnchor.constraint(equalToConstant: cellbackgroundHeight).isActive = true
         cellBackground.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
 
-//        cellBackground.widthAnchor.constraint(equalTo: widthAnchor, constant: 20).isActive = true
-
     }
 
     func renderText() {
         if (true) {
-            titleLabel.textColor = LightModeColor.textColor
+            titleLabel.textColor = UIColor.LightModeColor.textColor
         }
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.numberOfLines = 0
@@ -85,7 +80,6 @@ class DailyTaskCell: UITableViewCell {
 
 
     func setTitleConstraints() {
-//        titleLabel.pin(to: cellBackground)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leftAnchor.constraint(equalTo: cellBackground.leftAnchor, constant: 12).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
@@ -108,14 +102,8 @@ extension DailyTaskCell {
     }
     private var cellbackgroundHeight: CGFloat  { return 65 }
 
-    private struct LightModeColor {
-        static var cellColor: UIColor  { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.2057737586) }
-        static var cellTriggerdColor: UIColor { return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) }
-        static var textColor: UIColor {return .black}
-    }
-    struct DarkModeColor {
-
-    }
-
 }
 
+// TODO: event date dotted
+// TODO: dark mode change theme
+// TODO: real data
