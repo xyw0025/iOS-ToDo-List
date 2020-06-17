@@ -12,7 +12,7 @@ class settingItemsTableController: UITableViewController {
     var settingTitle = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+//        view.backgroundColor = .brown
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
 
         view.addSubview(navBar)
@@ -37,12 +37,10 @@ class settingItemsTableController: UITableViewController {
 
 //
 //
-        let controller = SettingsTableViewController()
-        if let controller = storyboard?.instantiateViewController(withIdentifier: "1") {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "1") as! HomeTabBarController
+        controller.changeSelectedIndex(to: 3)
         controller.modalPresentationStyle = .fullScreen
-        controller.tabBarController?.selectedIndex = 0
         present(controller, animated: true, completion: nil)
-        }
 
 
 

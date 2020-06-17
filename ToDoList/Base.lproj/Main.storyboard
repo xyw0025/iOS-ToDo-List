@@ -47,7 +47,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Ifa-N8-cy4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gDe-XI-AiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wYv-5J-1aG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="B2V-M0-l1G"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UzO-up-B9J">
@@ -58,6 +57,7 @@
                         <segue destination="Gnd-Hg-H1h" kind="relationship" relationship="rootViewController" id="yYd-G1-bXU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDe-XI-AiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3329" y="1085"/>
         </scene>
@@ -66,7 +66,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="secondPage" id="FtU-ci-JFP" customClass="settingItemsTableController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pYU-jG-hjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdkgjaklsdjglksdjgjgajsgjdjdkjasdg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A8P-Ex-gu2">
@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="-643" y="98"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="ylx-YC-xUG">
             <objects>
-                <tabBarController storyboardIdentifier="1" id="4qm-wa-dUc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="1" id="4qm-wa-dUc" customClass="HomeTabBarController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="viR-5Y-Xsj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -224,6 +224,6 @@
         <image name="Tune" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yYd-G1-bXU"/>
+        <segue reference="e2N-Tq-6nS"/>
     </inferredMetricsTieBreakers>
 </document>
