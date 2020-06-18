@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23C56B4321895B9684464967 /* Pods_ToDoList_ToDoListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05D2572E641D36CAB75336 /* Pods_ToDoList_ToDoListUITests.framework */; };
+		262301FE249B656000DB1E36 /* PomodoroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262301FD249B656000DB1E36 /* PomodoroController.swift */; };
 		263B2C7624949D65003D25C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C7524949D65003D25C1 /* AppDelegate.swift */; };
 		263B2C7824949D65003D25C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C7724949D65003D25C1 /* SceneDelegate.swift */; };
 		263B2C7A24949D65003D25C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C7924949D65003D25C1 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		04F0A5BE27E0BA198F8A590E /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
+		262301FD249B656000DB1E36 /* PomodoroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroController.swift; sourceTree = "<group>"; };
 		263B2C7224949D64003D25C1 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B2C7524949D65003D25C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263B2C7724949D65003D25C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262301FC249B642900DB1E36 /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				262301FD249B656000DB1E36 /* PomodoroController.swift */,
+			);
+			path = Pomodoro;
+			sourceTree = "<group>";
+		};
 		263B2C6924949D64003D25C1 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 				A2B059D02498D94A00189945 /* SideMenu */,
 				A24B612724989D68009D1D80 /* Setting */,
 				A2E5067C249911A7007507E2 /* Calendar */,
+				262301FC249B642900DB1E36 /* Pomodoro */,
 				263B2C7524949D65003D25C1 /* AppDelegate.swift */,
 				263B2C7724949D65003D25C1 /* SceneDelegate.swift */,
 				263B2C7924949D65003D25C1 /* ViewController.swift */,
@@ -469,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262301FE249B656000DB1E36 /* PomodoroController.swift in Sources */,
 				A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */,
 				A2B059CF2498D91A00189945 /* MenuListController.swift in Sources */,
 				263B2C7A24949D65003D25C1 /* ViewController.swift in Sources */,
