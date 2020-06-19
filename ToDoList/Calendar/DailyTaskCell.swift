@@ -11,6 +11,8 @@ import UIKit
 class DailyTaskCell: UITableViewCell {
     var title: String?
     var content: String?
+    var date: String?
+    
 
     var cellBackground: UIView = {
         var background = UIView()
@@ -23,10 +25,16 @@ class DailyTaskCell: UITableViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
+    var dateLabel: UILabel = {
+        var textView = UILabel()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
 
     func setTask(to task: Task) {
         title = task.title
         content = task.content
+        date = task.date
 
     }
     func setTheme(isDarkMode: Bool) {
@@ -37,9 +45,12 @@ class DailyTaskCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(cellBackground)
         self.addSubview(titleLabel)
+        self.addSubview(dateLabel)
 
         setTitleConstraints()
         setBackgroundConstraints()
+        setDateLabelConstraints()
+        
     }
 
     // table cell's color: when the cell is pressed & and the cell is not triggered
@@ -57,6 +68,9 @@ class DailyTaskCell: UITableViewCell {
         if let title = title {
             titleLabel.text = title
         }
+        if let date = date {
+            dateLabel.text = date
+        }
 
     }
     func setBackgroundConstraints() {
@@ -66,7 +80,13 @@ class DailyTaskCell: UITableViewCell {
         cellBackground.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         cellBackground.heightAnchor.constraint(equalToConstant: cellbackgroundHeight).isActive = true
         cellBackground.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-
+    }
+    func setDateLabelConstraints() {
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        dateLabel.leftAnchor.constraint(equalTo: cellBackground.leftAnchor).isActive = true
+        dateLabel.rightAnchor.constraint(equalTo: cellBackground.rightAnchor, constant: -12).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
 
     func renderText() {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,7 +73,6 @@
         <!--Settings Table View Controller-->
         <scene sceneID="Xl9-UZ-Yph">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdq-fx-4GU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="firstPage" id="Gnd-Hg-H1h" customClass="SettingsTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Haw-KE-s7u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -84,13 +83,13 @@
                     <tabBarItem key="tabBarItem" title="" image="Tune" id="0ea-2b-iD8"/>
                     <navigationItem key="navigationItem" id="ODg-Pv-ge1"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdq-fx-4GU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2281" y="1281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ifa-N8-cy4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gDe-XI-AiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wYv-5J-1aG" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="B2V-M0-l1G"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UzO-up-B9J">
@@ -101,6 +100,7 @@
                         <segue destination="Gnd-Hg-H1h" kind="relationship" relationship="rootViewController" id="yYd-G1-bXU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDe-XI-AiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3425" y="1280"/>
         </scene>
@@ -288,13 +288,13 @@
             <point key="canvasLocation" x="-1593" y="500"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="e2N-Tq-6nS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="24" height="24"/>
         <image name="TickBox" width="26" height="26"/>
         <image name="Timer" width="24" height="24"/>
         <image name="Tune" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="yYd-G1-bXU"/>
-    </inferredMetricsTieBreakers>
 </document>
