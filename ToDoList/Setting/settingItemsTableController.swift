@@ -8,6 +8,8 @@
 
 import UIKit
 
+// content of each setting options
+
 class settingItemsTableController: UITableViewController {
     var settingTitle = ""
     override func viewDidLoad() {
@@ -21,6 +23,8 @@ class settingItemsTableController: UITableViewController {
 
         navItem.leftBarButtonItem = back
         navBar.setItems([navItem], animated: false)
+
+
     }
     @objc func goBack() {
 //        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "1") as! UITabBarController
@@ -40,11 +44,9 @@ class settingItemsTableController: UITableViewController {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "1") as! HomeTabBarController
         controller.changeSelectedIndex(to: 3)
         controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .crossDissolve
         present(controller, animated: true, completion: nil)
 
-
-
-//
 
     }
 

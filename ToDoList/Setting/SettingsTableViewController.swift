@@ -90,7 +90,7 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
 
         if let controller = storyboard?.instantiateViewController(withIdentifier: "secondPage") {
             controller.modalPresentationStyle = .fullScreen
-            present(controller, animated: true, completion: nil)
+            present(controller, animated: false, completion: nil)
         }
 //        self.present(content, animated: true, completion: nil)
 

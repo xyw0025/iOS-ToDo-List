@@ -20,6 +20,7 @@ class MenuListController: UITableViewController {
         configureTableView()
 
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -45,7 +46,7 @@ class MenuListController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
         case [0,0]:
-            print("0")
+            print(0)
         case [0,1]:
             print("1")
         default:
@@ -55,7 +56,6 @@ class MenuListController: UITableViewController {
 
     }
 }
-
 
 extension UINavigationController {
     func hideNavigationItemBackground() {
