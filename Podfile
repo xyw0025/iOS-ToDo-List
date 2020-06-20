@@ -15,6 +15,9 @@ target 'ToDoList' do
   target 'ToDoListUITests' do
     # Pods for testing
   end
+pod 'Firebase/Analytics'
 pod 'SideMenu'
 pod 'FSCalendar'
+pod 'Firebase/Firestore'
+
 end

@@ -9,6 +9,7 @@
 import UIKit
 import FSCalendar
 import SideMenu
+import Firebase
 
 class CalendarViewController: UIViewController, FSCalendarDelegate {
     @IBOutlet var calendar: FSCalendar!
@@ -16,17 +17,29 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
     var dailyTasks = [Task]()
     var menu: SideMenuNavigationController?
 
-    var tasks = Tasks()
+    var tasks = TaskArchive()
+    
+    
+    func test() {
+        let task1 = Task(title: "testtest0000", content: "afakjsfkajlsf", date: "2020/06/28")
+//        tasks.addTask(from: task1)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         renderSideMenu()
-        dailyTasks = getDummyData()
+        
+        dailyTasks = getDataFromFirebase()
+//        dailyTasks = getDummyData()
+//        print(dailyTasks)
         tasks.getData(from: dailyTasks)
+        
         calendar.delegate = self
         calendar.customizeCalenderAppearance()
         configureTableView()
         setTableViewDelegates()
+        
+        test()
     }
     func renderSideMenu() {
 //        navigationController?.hideNavigationItemBackground()
@@ -87,67 +100,59 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-struct Task {
-    var title: String
-    var content: String
-    var date: String
-}
 
 
 extension CalendarViewController {
 //    隨便生ㄉdata
+    
+
     func getDummyData()-> [Task]{
         let day1 = Task(title: "HW1", content: "寫完作業...", date: "2020/06/12 03:31")
         let day2 = Task(title: "HW2", content: "寫完作業?..", date: "2020/06/24 22:31")
         return [day1, day2]
     }
-}
-
-
-class Tasks {
-    var tasks = [Task]()
     
-    func findSelectedDateEvents(on date: Date) -> [Task] {
-        var eventsOnDate = [Task]()
-        for task in tasks {
-            if date.isSameDay(comparedDate: task.date.stringToDate()) {
-//                print(date.dateToString() + "\n" + task.date)
-                eventsOnDate += [task]
-            }
+    
+    // MARK: 這邊拋出data有問題 所以上面的dailyTasks會是空的
+    func getDataFromFirebase()-> [Task] {
+            var data = [Task]()
+    //        var item: Task
+        let db = Firestore.firestore()
+        
+        db.collection("Tasks").getDocuments { (query, eeror) -> Void in
+//            if let query = query {
+//                for task in query.documents {
+//    //                    print(task.data()["date"])
+//                    let item = Task(title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String)
+//                    data += [item]
+//                }
+//            }
+        
+                
         }
-        return eventsOnDate
-    }
-    func getData(from data: [Task]) {
-        tasks = data
+         return data
     }
 }
+
+
+
+
+
 // TODO: date declaration
 // TODO: clean renderSideMenu
-extension Date {
-    func isSameDay(comparedDate: Date) -> Bool {
-//        let diff = Calendar.current.dateComponents([.day], from: self, to: comparedDate)
-//        print("diff \(diff)")
-        if self == comparedDate {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func dateToString() -> String {
-        var dateString = ""
-        let renderedFormatter = DateFormatter()
-        renderedFormatter.dateFormat = "yyyy/MM/dd"
-        dateString = renderedFormatter.string(from: self)
-        return dateString
-    }
-}
-extension String {
-    func stringToDate() -> Date {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let dateString = String(self[..<self.firstIndex(of: " ")!])
-        let date = formatter.date(from: dateString)
-        return date ?? formatter.date(from: "1997/11/04")!
-    }
-}
+//
+//if let url = URL(string: "https://dcard.tw/_api/posts/\(post.id)") {
+//
+//    print(post.id)
+//
+//    URLSession.shared.dataTask(with: url) { (data, response, error) in
+//        let decoder = JSONDecoder()
+//        let formatter = ISO8601DateFormatter()
+//        //                解析時間ISO8601
+//        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+//        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+//            let data = try decoder.singleValueContainer().decode(String.self)
+//            //                    回傳接到的時間，否則回傳目前時間
+//            return formatter.date(from: data) ?? Date()
+//        })
+//}
