@@ -12,7 +12,7 @@ import SideMenu
 import Firebase
 
 
-class CalendarViewController: UIViewController, FSCalendarDelegate {
+class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
     @IBOutlet var calendar: FSCalendar!
     var tableView = UITableView()
     var dailyTasks = [Task]() {
@@ -24,8 +24,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
     var menu: SideMenuNavigationController?
     var tasks = TaskArchive()
     
+    var datesWithEvent = ["2020-06-03"]
+
+    
     
     func test() {
+
+        tasks.updateData(key: "7ETvKlH52z8VWHNWUr0T", field: "date", value: "2020/06/01 00:00")
+        tasks.printData()
         //let task1 = Task(title: "testtest0000", content: "afakjsfkajlsf", date: "2020/06/28")
 //        tasks.addTask(from: task1)
     }
@@ -34,27 +40,19 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         super.viewDidLoad()
         renderSideMenu()
         
-        print("the tasks \(tasks.tasks.count)")
         dailyTasks = tasks.findSelectedDateEvents(on: Date())
         // print current date
+        
+//        test()
+        
         calendar.delegate = self
+        calendar.dataSource = self
         calendar.customizeCalenderAppearance()
         configureTableView()
         setTableViewDelegates()
         
-        
     }
-    func renderSideMenu() {
-//        navigationController?.hideNavigationItemBackground()
-//        view.backgroundColor = .white
-//        self.navigationController?.isNavigationBarHidden = true
-        menu = SideMenuNavigationController(rootViewController: MenuListController())
-        menu?.leftSide = true
-//        menu?.setNavigationBarHidden(true, animated: false)
-        SideMenuManager.default.leftMenuNavigationController = menu
-        menu?.statusBarEndAlpha = 0
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-    }
+
 
     func configureTableView() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
@@ -70,22 +68,36 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         tableView.dataSource = self
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        print("selected: \(date)")
+        print("selected: \(date)")
         let formatterWanted = DateFormatter()
         formatterWanted.dateFormat = "yyyy/MM/dd"
         if let selectedDate = formatterWanted.date(from: date.dateToString()) {
             print(tasks.findSelectedDateEvents(on: selectedDate))
             dailyTasks = tasks.findSelectedDateEvents(on: selectedDate)
-
         } else {
             print("error")
         }
-        
     }
-//    func reloadTable(data: [Task]) {
-//        // to let selected date tasks appear on table view
-//
-//    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let formatterWanted = DateFormatter()
+        formatterWanted.dateFormat = "yyyy-MM-dd"
+
+        let dateString = formatterWanted.string(from: date)
+
+        if self.datesWithEvent.contains(dateString) {
+            return 1
+        }
+
+        return 0
+    }
+    func renderSideMenu() {
+        menu = SideMenuNavigationController(rootViewController: MenuListController())
+        menu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        menu?.statusBarEndAlpha = 0
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+    }
 
 }
 
@@ -103,7 +115,9 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-//            tableView.deselectRow(at: indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: false)
+        print(",,,,")
+        
 
     }
 }
@@ -124,6 +138,5 @@ extension CalendarViewController {
 
 
 
-// TODO: date declaration
-// TODO: clean renderSideMenu
+
 

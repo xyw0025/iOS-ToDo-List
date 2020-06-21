@@ -18,6 +18,11 @@ extension UIColor {
         static var trackLayerColor: UIColor { return lightGray }
         static var shapeLayerWorkColor: UIColor { return UIColor(hex: "#E68552") }
         static var shapeLayerBreakColor: UIColor { return UIColor(hex: "#6C9460") }
+        static var calendarBackground: UIColor {return .white}
+    }
+    struct Calendar {
+        static var today: UIColor { return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) }
+        static var eventDot: UIColor { return #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1) }
     }
 }
 

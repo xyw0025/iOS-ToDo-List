@@ -10,7 +10,7 @@ import Foundation
 import FSCalendar
 extension FSCalendar {
     func customizeCalenderAppearance() {
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor.LightModeColor.calendarBackground
         self.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesSingleUpperCase]
 
 //        self.appearance.headerTitleFont      = UIFont.init(name: Fonts.BalloRegular, size: 18)
@@ -19,12 +19,13 @@ extension FSCalendar {
 
 //        self.appearance.headerTitleColor     =
 ////        self.appearance.weekdayTextColor     = Colors.topTabBarSelectedColor
-//        self.appearance.eventDefaultColor    =
-//        self.appearance.selectionColor       =
+        self.appearance.eventDefaultColor    = UIColor.Calendar.eventDot
 ////        self.appearance.titleSelectionColor  = Colors.NavTitleColor
 //
 //
-//        self.appearance.todayColor           =
+        self.appearance.todayColor           = UIColor.Calendar.today
+//        self.appearance.selectionColor       =
+
 ////        self.appearance.todaySelectionColor  = Colors.purpleColor
 //
         self.appearance.headerMinimumDissolvedAlpha = 0.0 // Hide Left Right Month Name
