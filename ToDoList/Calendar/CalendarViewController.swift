@@ -11,35 +11,38 @@ import FSCalendar
 import SideMenu
 import Firebase
 
+
 class CalendarViewController: UIViewController, FSCalendarDelegate {
     @IBOutlet var calendar: FSCalendar!
     var tableView = UITableView()
-    var dailyTasks = [Task]()
+    var dailyTasks = [Task]() {
+        didSet {
+            // refresh the table
+            tableView.reloadData()
+        }
+    }
     var menu: SideMenuNavigationController?
-
     var tasks = TaskArchive()
     
     
     func test() {
-        let task1 = Task(title: "testtest0000", content: "afakjsfkajlsf", date: "2020/06/28")
+        //let task1 = Task(title: "testtest0000", content: "afakjsfkajlsf", date: "2020/06/28")
 //        tasks.addTask(from: task1)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         renderSideMenu()
         
-        dailyTasks = getDataFromFirebase()
-//        dailyTasks = getDummyData()
-//        print(dailyTasks)
-        tasks.getData(from: dailyTasks)
-        
+        print("the tasks \(tasks.tasks.count)")
+        dailyTasks = tasks.findSelectedDateEvents(on: Date())
+        // print current date
         calendar.delegate = self
         calendar.customizeCalenderAppearance()
         configureTableView()
         setTableViewDelegates()
         
-        test()
+        
     }
     func renderSideMenu() {
 //        navigationController?.hideNavigationItemBackground()
@@ -52,12 +55,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         menu?.statusBarEndAlpha = 0
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
+
     func configureTableView() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
 
         view.addSubview(tableView)
         tableView.rowHeight = 80
         tableView.register(DailyTaskCell.self, forCellReuseIdentifier: "DailyTaskCell")
+        
         tableView.pinOver(to: view, below: calendar)
     }
     func setTableViewDelegates() {
@@ -70,14 +75,17 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         formatterWanted.dateFormat = "yyyy/MM/dd"
         if let selectedDate = formatterWanted.date(from: date.dateToString()) {
             print(tasks.findSelectedDateEvents(on: selectedDate))
+            dailyTasks = tasks.findSelectedDateEvents(on: selectedDate)
+
         } else {
             print("error")
         }
         
-        // find events only on that selected date
     }
-// class TASKS
-
+//    func reloadTable(data: [Task]) {
+//        // to let selected date tasks appear on table view
+//
+//    }
 
 }
 
@@ -104,34 +112,12 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CalendarViewController {
 //    隨便生ㄉdata
-    
-
     func getDummyData()-> [Task]{
         let day1 = Task(title: "HW1", content: "寫完作業...", date: "2020/06/12 03:31")
         let day2 = Task(title: "HW2", content: "寫完作業?..", date: "2020/06/24 22:31")
         return [day1, day2]
     }
     
-    
-    // MARK: 這邊拋出data有問題 所以上面的dailyTasks會是空的
-    func getDataFromFirebase()-> [Task] {
-            var data = [Task]()
-    //        var item: Task
-        let db = Firestore.firestore()
-        
-        db.collection("Tasks").getDocuments { (query, eeror) -> Void in
-//            if let query = query {
-//                for task in query.documents {
-//    //                    print(task.data()["date"])
-//                    let item = Task(title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String)
-//                    data += [item]
-//                }
-//            }
-        
-                
-        }
-         return data
-    }
 }
 
 
@@ -140,19 +126,4 @@ extension CalendarViewController {
 
 // TODO: date declaration
 // TODO: clean renderSideMenu
-//
-//if let url = URL(string: "https://dcard.tw/_api/posts/\(post.id)") {
-//
-//    print(post.id)
-//
-//    URLSession.shared.dataTask(with: url) { (data, response, error) in
-//        let decoder = JSONDecoder()
-//        let formatter = ISO8601DateFormatter()
-//        //                解析時間ISO8601
-//        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-//        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
-//            let data = try decoder.singleValueContainer().decode(String.self)
-//            //                    回傳接到的時間，否則回傳目前時間
-//            return formatter.date(from: data) ?? Date()
-//        })
-//}
+

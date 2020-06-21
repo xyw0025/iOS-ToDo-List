@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import Dispatch
 class TaskArchive {
     
     var tasks = [Task]()
@@ -34,5 +35,27 @@ class TaskArchive {
     
     func getData(from data: [Task]) {
         tasks = data
+    }
+    func printData() {
+        print(tasks.count)
+        for task in self.tasks {
+            print(task)
+        }
+    }
+
+    func getDataFromFirebase() {
+        let db = Firestore.firestore()
+        db.collection("Tasks").getDocuments { (query, eeror) -> Void in
+            if let query = query {
+                for task in query.documents {
+                    //                    print(task.data()["date"])
+                    let item = Task(title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String)
+                    self.tasks += [item]
+                }
+            }
+        }
+    }
+    init() {
+        getDataFromFirebase()
     }
 }
