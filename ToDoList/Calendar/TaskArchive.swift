@@ -12,6 +12,7 @@ import Dispatch
 class TaskArchive {
     
     var tasks = [Task]()
+    var taskDates = Set<String>()
     let db = Firestore.firestore()
     func findSelectedDateEvents(on date: Date) -> [Task] {
         var eventsOnDate = [Task]()
@@ -23,19 +24,30 @@ class TaskArchive {
         }
         return eventsOnDate
     }
-    
+    func getAllDates() {
+        let formatterWanted = DateFormatter()
+        formatterWanted.dateFormat = "yyyy-MM-dd"
+        
+        for task in tasks {
+            taskDates.insert(task.date.stringToDate().dateToString())
+        }
+        print("taskDates:\(taskDates)")
+    }
     func addTask(from task: Task) {
         db.collection("Tasks").addDocument(data: [
             "title": task.title,
             "date": task.date,
             "content": task.content,
             "status": task.status
+//            "timeStamp": task.timeStamp
         ])
     }
     
     func getData(from data: [Task]) {
         tasks = data
     }
+    
+    
     func printData() {
 //        print("")
         for task in self.tasks {
@@ -49,8 +61,11 @@ class TaskArchive {
             if let query = query {
                 for task in query.documents {
                     //                    print(task.data()["date"])
-                    let item = Task(id: task.documentID ,title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String, status: task.data()["status"] as! Bool)
-                    self.tasks += [item]
+                    DispatchQueue.main.async {
+                        let item = Task(id: task.documentID ,title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String, status: task.data()["status"] as! Bool)
+                        self.tasks += [item]
+                    }
+                    
                 }
             }
         }
@@ -70,7 +85,7 @@ class TaskArchive {
         }
     }
     
-    func updateData(key: String, field: String, value: String) {
+    func updateDataDocument(key: String, field: String, value: String) {
         let task = db.collection("Tasks").document(key)
         task.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -79,10 +94,7 @@ class TaskArchive {
             } else {
                 print("Document does not exist")
             }
-        }
-        getDataFromFirebase()
-        printData()
-        
+        }        
     }
     
     func deleteAllData(){
@@ -90,19 +102,20 @@ class TaskArchive {
     }
     
     func getDummyData() {
-        addTask(from: Task(title: "HW1", content: "QQ", date: "2020/06/12 04:00", status: false))
-        addTask(from: Task(title: "HW2", content: "aslkjfajfsjklasf", date: "2020/06/12 05:00", status: true))
-        addTask(from: Task(title: "HW3", content: "aslkjfajfsjklasf", date: "2020/06/24 00:00", status: true))
-        addTask(from: Task(title: "HW4", content: "aslkjfajfsjklasf", date: "2020/06/12 05:00"))
+        addTask(from: Task(title: "HW1", content: "QQ", date: "2020-06-12 04:00", status: false))
+        addTask(from: Task(title: "HW2", content: "aslkjfajfsjklasf", date: "2020-06-30 05:00", status: true))
+        addTask(from: Task(title: "HW3", content: "aslkjfajfsjklasf", date: "2020-06-24 00:00", status: true))
+        addTask(from: Task(title: "HW4", content: "aslkjfajfsjklasf", date: "2020-06-01 05:00"))
     }
     
     
     init() {
         getDataFromFirebase()
 //        updateData(key:"6IelLfE78YwE7mpz0DQL", field: "date", value: "2020/06/09 00:00")
-//        deleteAllData()
-
+        deleteAllData()
+        
 //        getDummyData()
+        
     }
     
     

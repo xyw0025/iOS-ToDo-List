@@ -19,7 +19,7 @@ extension Date {
     func dateToString() -> String {
         var dateString = ""
         let renderedFormatter = DateFormatter()
-        renderedFormatter.dateFormat = "yyyy/MM/dd"
+        renderedFormatter.dateFormat = "yyyy-MM-dd"
         dateString = renderedFormatter.string(from: self)
         return dateString
     }
