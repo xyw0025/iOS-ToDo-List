@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxf-d8-FgW">
-                                <rect key="frame" x="70" y="671" width="59" height="42"/>
+                                <rect key="frame" x="70" y="671" width="58" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="tintColor" red="1" green="0.52156862749999999" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start">
@@ -191,7 +191,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqF-Lk-iQb">
                                 <rect key="frame" x="162" y="622" width="91" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -286,7 +286,7 @@
         <!--Home Tab Bar Controller-->
         <scene sceneID="ylx-YC-xUG">
             <objects>
-                <tabBarController storyboardIdentifier="1" id="4qm-wa-dUc" customClass="HomeTabBarController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainVC" modalPresentationStyle="fullScreen" id="4qm-wa-dUc" customClass="HomeTabBarController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="viR-5Y-Xsj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,13 +305,13 @@
             <point key="canvasLocation" x="-1593" y="500"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="e2N-Tq-6nS"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Calendar" width="24" height="24"/>
         <image name="TickBox" width="26" height="26"/>
         <image name="Timer" width="24" height="24"/>
         <image name="Tune" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="e2N-Tq-6nS"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,11 @@
 		263B2C8524949D6B003D25C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263B2C8324949D6B003D25C1 /* LaunchScreen.storyboard */; };
 		263B2C9024949D6C003D25C1 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C8F24949D6C003D25C1 /* ToDoListTests.swift */; };
 		263B2C9B24949D6C003D25C1 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */; };
+		26F1557C24A24C8400D10050 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F1557B24A24C8400D10050 /* Onboarding.storyboard */; };
+		26F1557F24A24CE100D10050 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1557E24A24CE100D10050 /* WelcomeViewController.swift */; };
+		26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558024A24CFE00D10050 /* CalenderViewController.swift */; };
+		26F1558324A24D1900D10050 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558224A24D1900D10050 /* ReadyViewController.swift */; };
+		26F1558524A2503000D10050 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558424A2503000D10050 /* HomeTabBarController.swift */; };
 		6FF86F37DAABB89A890BDDA7 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43176FF46E5131EF60D792E /* Pods_ToDoList.framework */; };
 		A246247E24992F420098A710 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246247D24992F420098A710 /* UIColorExtension.swift */; };
 		A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246247F2499352F0098A710 /* FSCalendarExtensions.swift */; };
@@ -72,6 +77,11 @@
 		263B2C9624949D6C003D25C1 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		263B2C9C24949D6C003D25C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F1557B24A24C8400D10050 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		26F1557E24A24CE100D10050 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		26F1558024A24CFE00D10050 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		26F1558224A24D1900D10050 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		26F1558424A2503000D10050 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabBarController.swift; path = Onboarding/HomeTabBarController.swift; sourceTree = "<group>"; };
 		51004EC235CD5F37B369341E /* Pods-ToDoList-ToDoListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList-ToDoListUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList-ToDoListUITests/Pods-ToDoList-ToDoListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EDA84E84265296522B11723 /* Pods_ToDoListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63014A5B8096A23DB4E937AF /* Pods-ToDoList-ToDoListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList-ToDoListUITests.release.xcconfig"; path = "Target Support Files/Pods-ToDoList-ToDoListUITests/Pods-ToDoList-ToDoListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,9 +172,11 @@
 				A24B612724989D68009D1D80 /* Setting */,
 				A2E5067C249911A7007507E2 /* Calendar */,
 				262301FC249B642900DB1E36 /* Pomodoro */,
+				26F1557D24A24C9300D10050 /* Onboarding */,
 				263B2C7524949D65003D25C1 /* AppDelegate.swift */,
 				263B2C7724949D65003D25C1 /* SceneDelegate.swift */,
 				263B2C7924949D65003D25C1 /* ViewController.swift */,
+				26F1558424A2503000D10050 /* HomeTabBarController.swift */,
 				263B2C7B24949D65003D25C1 /* Main.storyboard */,
 				263B2C8124949D6B003D25C1 /* Assets.xcassets */,
 				263B2C8324949D6B003D25C1 /* LaunchScreen.storyboard */,
@@ -192,6 +204,17 @@
 				263B2C9C24949D6C003D25C1 /* Info.plist */,
 			);
 			path = ToDoListUITests;
+			sourceTree = "<group>";
+		};
+		26F1557D24A24C9300D10050 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				26F1557B24A24C8400D10050 /* Onboarding.storyboard */,
+				26F1557E24A24CE100D10050 /* WelcomeViewController.swift */,
+				26F1558024A24CFE00D10050 /* CalenderViewController.swift */,
+				26F1558224A24D1900D10050 /* ReadyViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		88C2DB7CB92A05123BFBFE92 /* Pods */ = {
@@ -369,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				263B2C8524949D6B003D25C1 /* LaunchScreen.storyboard in Resources */,
+				26F1557C24A24C8400D10050 /* Onboarding.storyboard in Resources */,
 				A2696EC4249DDD9200A545AD /* GoogleService-Info.plist in Resources */,
 				263B2C8224949D6B003D25C1 /* Assets.xcassets in Resources */,
 				263B2C7D24949D65003D25C1 /* Main.storyboard in Resources */,
@@ -500,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A273D41D249DE59100275C79 /* TaskArchive.swift in Sources */,
+				26F1557F24A24CE100D10050 /* WelcomeViewController.swift in Sources */,
 				262301FE249B656000DB1E36 /* PomodoroController.swift in Sources */,
 				A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */,
 				A273D419249DE53E00275C79 /* StringExtension.swift in Sources */,
@@ -508,14 +533,17 @@
 				263B2C7624949D65003D25C1 /* AppDelegate.swift in Sources */,
 				A25349EE24A093DA0099A984 /* addTaskField.swift in Sources */,
 				A2F5CDA52499911B001380D3 /* settingItemsTableController.swift in Sources */,
+				26F1558524A2503000D10050 /* HomeTabBarController.swift in Sources */,
 				263B2C7824949D65003D25C1 /* SceneDelegate.swift in Sources */,
 				263B2C8024949D65003D25C1 /* ToDoList.xcdatamodeld in Sources */,
 				A273D41B249DE55300275C79 /* DateExtension.swift in Sources */,
 				A24B612624988A62009D1D80 /* SettingCell.swift in Sources */,
+				26F1558324A24D1900D10050 /* ReadyViewController.swift in Sources */,
 				A2E5068024992700007507E2 /* DailyTaskCell.swift in Sources */,
 				A2E5067B24991010007507E2 /* CalendarViewController.swift in Sources */,
 				A246247E24992F420098A710 /* UIColorExtension.swift in Sources */,
 				A24B612B2498AD89009D1D80 /* SettingsTableViewController.swift in Sources */,
+				26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */,
 				A273D41F249DE5E500275C79 /* Task.swift in Sources */,
 				A2B059CD2498D74800189945 /* UIViewExtenstion.swift in Sources */,
 			);

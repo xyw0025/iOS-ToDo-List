@@ -45,10 +45,3 @@ extension UIViewController {
         }
     }
 }
-
-
-class HomeTabBarController: UITabBarController {
-    func changeSelectedIndex(to index: Int) {
-        selectedIndex = index
-    }
-}
