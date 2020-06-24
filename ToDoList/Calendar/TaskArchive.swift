@@ -27,11 +27,11 @@ class TaskArchive {
     func getAllDates() {
         let formatterWanted = DateFormatter()
         formatterWanted.dateFormat = "yyyy-MM-dd"
-        
+        taskDates = []
         for task in tasks {
             taskDates.insert(task.date.stringToDate().dateToString())
         }
-        print("taskDates:\(taskDates)")
+//        print("taskDates:\(taskDates)")
     }
     func addTask(from task: Task) {
         db.collection("Tasks").addDocument(data: [
@@ -55,21 +55,7 @@ class TaskArchive {
         }
     }
 
-    func getDataFromFirebase() {
-        tasks = []
-        db.collection("Tasks").getDocuments { (query, eeror) -> Void in
-            if let query = query {
-                for task in query.documents {
-                    //                    print(task.data()["date"])
-                    DispatchQueue.main.async {
-                        let item = Task(id: task.documentID ,title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String, status: task.data()["status"] as! Bool)
-                        self.tasks += [item]
-                    }
-                    
-                }
-            }
-        }
-    }
+
     
     func toggleTaskStatus(key: String) {
         let task = db.collection("Tasks").document(key)
@@ -109,10 +95,12 @@ class TaskArchive {
     }
     
     
+    
     init() {
-        getDataFromFirebase()
+//        getDataFromFirebase()
+        print(".....")
 //        updateData(key:"6IelLfE78YwE7mpz0DQL", field: "date", value: "2020/06/09 00:00")
-        deleteAllData()
+//        deleteAllData()
         
 //        getDummyData()
         
