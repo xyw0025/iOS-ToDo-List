@@ -56,6 +56,7 @@ class SettingsTableViewController: UIViewController {
 
     func configureTextLabel() {
         someRandomText.text = "credit"
+        someRandomText.textAlignment = .center
         view.addSubview(someRandomText)
         someRandomText.pin(to: tableView)
     }
@@ -86,15 +87,30 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let content = SettingItemsViewController()
 
-        if let controller = storyboard?.instantiateViewController(withIdentifier: "secondPage") {
-            controller.modalPresentationStyle = .fullScreen
-            present(controller, animated: false, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//        self.navigationController?.pushViewController(DVC, animated: true)
+        let navVC = UINavigationController()
+        switch indexPath.row {
+        case 0:
+            // Theme
+            navVC.addChild(settingItemsTableController())
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.pushViewController(settingItemsTableController(), animated: true)
+        case 1:
+            print("About page")
+//
+            let DVC = storyboard.instantiateViewController(withIdentifier: "About")
+
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.pushViewController(DVC, animated: true)
+        default:
+            print("setting page - non exist page")
         }
-//        self.present(content, animated: true, completion: nil)
 
-//            tableView.deselectRow(at: indexPath, animated: false)
+
+
     }
 
     

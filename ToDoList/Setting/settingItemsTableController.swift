@@ -15,14 +15,14 @@ class settingItemsTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        view.backgroundColor = .brown
-        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
+//
+//        view.addSubview(navBar)
+//        let navItem = UINavigationItem(title: "Settings")
+//        let back = UIBarButtonItem(title: "Back",style: .plain, target: nil,action: #selector(goBack))
 
-        view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "Settings")
-        let back = UIBarButtonItem(title: "Back",style: .plain, target: nil,action: #selector(goBack))
-
-        navItem.leftBarButtonItem = back
-        navBar.setItems([navItem], animated: false)
+//        navItem.leftBarButtonItem = back
+//        navBar.setItems([navItem], animated: false)
 
 
     }
@@ -41,11 +41,11 @@ class settingItemsTableController: UITableViewController {
 
 //
 //
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "1") as! HomeTabBarController
-        controller.changeSelectedIndex(to: 3)
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .crossDissolve
-        present(controller, animated: true, completion: nil)
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "1") as! HomeTabBarController
+//        controller.changeSelectedIndex(to: 3)
+//        controller.modalPresentationStyle = .fullScreen
+//        controller.modalTransitionStyle = .crossDissolve
+//        present(controller, animated: true, completion: nil)
 
 
     }

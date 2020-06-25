@@ -33,6 +33,7 @@
 		A273D41B249DE55300275C79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A273D41A249DE55300275C79 /* DateExtension.swift */; };
 		A273D41D249DE59100275C79 /* TaskArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A273D41C249DE59100275C79 /* TaskArchive.swift */; };
 		A273D41F249DE5E500275C79 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A273D41E249DE5E500275C79 /* Task.swift */; };
+		A2A6DBC824A46EEF00381B29 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6DBC724A46EEF00381B29 /* AboutViewController.swift */; };
 		A2B059CD2498D74800189945 /* UIViewExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B059CC2498D74800189945 /* UIViewExtenstion.swift */; };
 		A2B059CF2498D91A00189945 /* MenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B059CE2498D91A00189945 /* MenuListController.swift */; };
 		A2E5067B24991010007507E2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E5067A24991010007507E2 /* CalendarViewController.swift */; };
@@ -95,6 +96,7 @@
 		A273D41A249DE55300275C79 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A273D41C249DE59100275C79 /* TaskArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskArchive.swift; sourceTree = "<group>"; };
 		A273D41E249DE5E500275C79 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A2A6DBC724A46EEF00381B29 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A2B059CC2498D74800189945 /* UIViewExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtenstion.swift; path = ToDoList/Extensions/UIViewExtenstion.swift; sourceTree = SOURCE_ROOT; };
 		A2B059CE2498D91A00189945 /* MenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListController.swift; sourceTree = "<group>"; };
 		A2E5067A24991010007507E2 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A24B612A2498AD89009D1D80 /* SettingsTableViewController.swift */,
+				A2A6DBC724A46EEF00381B29 /* AboutViewController.swift */,
 				A2F5CDA42499911B001380D3 /* settingItemsTableController.swift */,
 				A24B612524988A62009D1D80 /* SettingCell.swift */,
 			);
@@ -542,6 +545,7 @@
 				26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */,
 				A273D41F249DE5E500275C79 /* Task.swift in Sources */,
 				A2B059CD2498D74800189945 /* UIViewExtenstion.swift in Sources */,
+				A2A6DBC824A46EEF00381B29 /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

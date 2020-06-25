@@ -30,6 +30,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
     @IBAction func addTask(_ sender: UITextField) {
         taskArchive.addTask(from: Task(title: sender.text!, content: "...", date: "2020-06-22 06:23"))
+        sender.text = ""
+
         self.tableView.reloadData()
         self.calendar.reloadData()
     }
