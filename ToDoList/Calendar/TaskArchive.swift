@@ -38,7 +38,8 @@ class TaskArchive {
             "title": task.title,
             "date": task.date,
             "content": task.content,
-            "status": task.status
+            "status": task.status,
+            "tags": task.tags
 //            "timeStamp": task.timeStamp
         ])
     }
@@ -64,7 +65,7 @@ class TaskArchive {
         let task = db.collection("Tasks").document(key)
         task.getDocument { (document, error) in
             if let document = document, document.exists {
-                if let data = document.data() {
+                if let data = document.data(), document.documentID == key {
                     let status = !(data["status"] as! Bool)
                     task.updateData(["status": status])
                 }
@@ -91,10 +92,10 @@ class TaskArchive {
     }
     
     func getDummyData() {
-        addTask(from: Task(title: "HW1", content: "QQ", date: "2020-06-12 04:00", status: false))
-        addTask(from: Task(title: "HW2", content: "aslkjfajfsjklasf", date: "2020-06-30 05:00", status: true))
-        addTask(from: Task(title: "HW3", content: "aslkjfajfsjklasf", date: "2020-06-24 00:00", status: true))
-        addTask(from: Task(title: "HW4", content: "aslkjfajfsjklasf", date: "2020-06-01 05:00"))
+        addTask(from: Task(title: "HW1", content: "QQ", date: "2020-06-12 04:00", status: false, tags: ["school", "通識"]))
+        addTask(from: Task(title: "HW2", content: "aslkjfajfsjklasf", date: "2020-06-30 05:00", status: true, tags: ["school", "CS"]))
+        addTask(from: Task(title: "HW3", content: "aslkjfajfsjklasf", date: "2020-06-24 00:00", status: true, tags: ["school"]))
+        addTask(from: Task(title: "HW4", content: "aslkjfajfsjklasf", date: "2020-06-01 05:00", tags: ["school"]))
     }
     
     

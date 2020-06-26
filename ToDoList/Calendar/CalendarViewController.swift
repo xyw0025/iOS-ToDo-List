@@ -51,6 +51,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         button.configureButton(to: view)
         setTableViewDelegates()
 
+//        taskArchive.deleteAllData()
+//        taskArchive.getDummyData()
 //        test()
         
     }
@@ -63,7 +65,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             self.taskArchive.tasks = []
             if let querySnapshot = querySnapshot {
                 for task in querySnapshot.documents {
-                    let item = Task(id: task.documentID ,title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String, status: task.data()["status"] as! Bool)
+                    let item = Task(id: task.documentID ,title: task.data()["title"] as! String, content: task.data()["content"] as! String, date: task.data()["date"] as! String, status: task.data()["status"] as! Bool, tags: task.data()["tags"] as! [String])
                     self.taskArchive.tasks += [item]
                 }
                 self.taskArchive.getAllDates()
@@ -195,6 +197,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         }
         action.image = UIImage(systemName: "trash")
         action.backgroundColor = .red
+
 
         return action
     }

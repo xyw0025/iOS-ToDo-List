@@ -77,16 +77,14 @@ class DailyTaskCell: UITableViewCell {
         setBackgroundConstraints()
         setTitleConstraints()
         setDateLabelConstraints()
+
     }
 
     @objc func toggleCheckbox() {
         var task = TaskArchive()
+        print(id)
         task.toggleTaskStatus(key: (id ?? nil)!)
-        if status == false {
-            statusButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-        } else {
-            statusButton.setImage(UIImage(systemName: "square"), for: .normal)
-        }
+
 
 
     }
@@ -100,6 +98,11 @@ class DailyTaskCell: UITableViewCell {
             dateLabel.text = date
         }
 
+        if status == true {
+            self.statusButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        } else {
+            self.statusButton.setImage(UIImage(systemName: "square"), for: .normal)
+        }
     }
 
 
@@ -117,9 +120,8 @@ class DailyTaskCell: UITableViewCell {
         statusButton.layer.cornerRadius = cellCornerRaius
         statusButton.translatesAutoresizingMaskIntoConstraints = false
         statusButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        statusButton.leadingAnchor.constraint(equalTo: cellBackground.leadingAnchor, constant: 0).isActive = true
-//        statusButton.backgroundColor = .purple
-        statusButton.heightAnchor.constraint(equalToConstant: cellbackgroundHeight).isActive = true
+        statusButton.leadingAnchor.constraint(equalTo: cellBackground.leadingAnchor, constant: 5).isActive = true
+//        statusButton.heightAnchor.constraint(equalToConstant: cellbackgroundHeight*2).isActive = true
         statusButton.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
 //        statusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -200).isActive = true
     }
@@ -175,5 +177,5 @@ extension DailyTaskCell {
 
 extension DailyTaskCell {
     var buttonTitleConstraints: CGFloat { return CGFloat(layer.bounds.width * 0.01)}
-    var buttonWidth: CGFloat { return CGFloat(layer.bounds.width * 0.1)}
+    var buttonWidth: CGFloat { return CGFloat(layer.bounds.width * 0.12)}
 }
