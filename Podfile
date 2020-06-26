@@ -22,6 +22,7 @@ pod 'Firebase/Analytics'
 pod 'SideMenu'
 pod 'FSCalendar'
 pod 'Firebase/Firestore'
+pod 'BulletinBoard'
 
 end
 

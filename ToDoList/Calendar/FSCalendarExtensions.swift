@@ -10,7 +10,7 @@ import Foundation
 import FSCalendar
 extension FSCalendar {
     func customizeCalenderAppearance() {
-        self.backgroundColor = UIColor.LightModeColor.calendarBackground
+        self.backgroundColor = UIColor.LightMode.calendarBackground
         self.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesSingleUpperCase]
         self.appearance.eventDefaultColor    = UIColor.Calendar.eventDefaultColor
         self.appearance.eventSelectionColor = UIColor.Calendar.eventSelectionColor

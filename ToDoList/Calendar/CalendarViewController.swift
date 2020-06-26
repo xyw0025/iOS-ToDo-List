@@ -21,6 +21,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             tableView.reloadData()
         }
     }
+    var button = AddTaskButton()
     @IBOutlet weak var addTaskField: UITextField!
     let db = Firestore.firestore()
 
@@ -41,20 +42,22 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         checkForUpdates()
 
         renderSideMenu()
+
 //        taskArchive.getDummyData()
 
         configureTableView()
         configureCalendar()
         configureTextfield()
+        button.configureButton(to: view)
         setTableViewDelegates()
-        
+
 //        test()
         
     }
 
     func getDataFromFirebase() {
-        print("getting in ")
-        db.collection("Tasks").getDocuments() {
+//        print("getting in ")
+        db.collection("Tasks").order(by: "date").getDocuments() {
             querySnapshot, error in
 
             self.taskArchive.tasks = []
@@ -69,8 +72,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
             }
             DispatchQueue.main.async {
-                print("GetDataFromFirebase")
-
+//                print("GetDataFromFirebase")
                 self.dailyTasks = self.findTasksOnDate(date: self.calendar?.selectedDate ?? Date())
                 self.tableView.reloadData()
                 self.calendar.reloadData()
@@ -79,8 +81,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
 
     func checkForUpdates() {
-        print("check for updates----------")
-        db.collection("Tasks").addSnapshotListener {
+//        print("check for updates----------")
+        db.collection("Tasks").order(by: "date").addSnapshotListener {
             querySnapshot, error in
             self.getDataFromFirebase()
         }
@@ -99,6 +101,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.customizeCalenderAppearance()
         taskArchive.getAllDates()
     }
+
+
 
     func configureTableView() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
@@ -161,17 +165,40 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return 0
     }
 
+
+    
     func renderSideMenu() {
         menu = SideMenuNavigationController(rootViewController: MenuListController())
-        menu?.leftSide = true
+        menu?.leftSide = false
+        
         SideMenuManager.default.leftMenuNavigationController = menu
         menu?.statusBarEndAlpha = 0
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
+
     }
 
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            let deleteTask = self.dailyTasks[indexPath.row]
+            self.taskArchive.removeTask(for: deleteTask.id)
+            self.dailyTasks.remove(at: indexPath.row)
+            completion(true)
+        }
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = .red
+
+        return action
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dailyTasks.count
     }
@@ -184,7 +211,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
 
     }

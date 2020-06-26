@@ -52,9 +52,9 @@ class SettingCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         if highlighted == true {
-            cellBackground.backgroundColor = UIColor.LightModeColor.cellTriggerdColor
+            cellBackground.backgroundColor = UIColor.LightMode.cellTriggerdColor
         } else {
-            cellBackground.backgroundColor = UIColor.LightModeColor.cellColor
+            cellBackground.backgroundColor = UIColor.LightMode.cellColor
         }
     }
 
@@ -81,7 +81,7 @@ class SettingCell: UITableViewCell {
 
     func renderText() {
         if (true) {
-            titleLabel.textColor = UIColor.LightModeColor.textColor
+            titleLabel.textColor = UIColor.LightMode.textColor
         }
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.numberOfLines = 0

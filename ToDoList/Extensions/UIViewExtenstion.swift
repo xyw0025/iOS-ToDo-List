@@ -24,9 +24,26 @@ extension UIView {
         trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
         bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: bottomConstant).isActive = true
     }
+    func pinToRightBottom(to superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: buttonRadius).isActive = true
+        widthAnchor.constraint(equalToConstant: buttonRadius).isActive = true
+//        button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: bottomConstraintsConstant).isActive = true
+        trailingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.trailingAnchor, constant: bottomConstraintsConstant).isActive = true
+
+    }
+
+
 }
+
+
+
 
 extension UIView {
     var topAnchorConstraintsConstant: CGFloat { return 65 }
+    var bottomConstraintsConstant: CGFloat {return -30}
+    var buttonRadius: CGFloat {return 60}
 }
 

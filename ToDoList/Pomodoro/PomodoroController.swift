@@ -25,16 +25,16 @@ class PomodoroController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        modeLabel.textColor = UIColor.LightModeColor.textColor
-        timeLabel.textColor = UIColor.LightModeColor.textColor
-        startButton.setTitleColor(UIColor.LightModeColor.textColor, for: .normal)
-        cancelButton.setTitleColor(UIColor.LightModeColor.textColor, for: .normal)
+        modeLabel.textColor = UIColor.LightMode.textColor
+        timeLabel.textColor = UIColor.LightMode.textColor
+        startButton.setTitleColor(UIColor.LightMode.textColor, for: .normal)
+        cancelButton.setTitleColor(UIColor.LightMode.textColor, for: .normal)
         
         let center = view.center
         let trackLayer = CAShapeLayer()
         let circlePath = UIBezierPath(arcCenter: center, radius: 130, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackLayer.path = circlePath.cgPath
-        trackLayer.strokeColor = UIColor.LightModeColor.trackLayerColor.cgColor
+        trackLayer.strokeColor = UIColor.LightMode.trackLayerColor.cgColor
         trackLayer.lineWidth = 2
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = CAShapeLayerLineCap.round
@@ -48,7 +48,7 @@ class PomodoroController: UIViewController {
         shapeLayer.path = shapeLayerPath.cgPath
         shapeLayer.lineWidth = 20
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.LightModeColor.shapeLayerWorkColor.cgColor
+        shapeLayer.strokeColor = UIColor.LightMode.shapeLayerWorkColor.cgColor
         shapeLayer.strokeEnd = 0
         view.layer.addSublayer(shapeLayer)
     }
@@ -135,13 +135,13 @@ class PomodoroController: UIViewController {
             time = 3    //300
             timeLabel.text = "05:00"
             modeLabel.text = "Break Mode"
-            shapeLayer.strokeColor = UIColor.LightModeColor.shapeLayerBreakColor.cgColor
+            shapeLayer.strokeColor = UIColor.LightMode.shapeLayerBreakColor.cgColor
             isBreakMode = true
         } else {
             time = 5    //1500
             timeLabel.text = "25:00"
             modeLabel.text = "Work Mode"
-            shapeLayer.strokeColor = UIColor.LightModeColor.shapeLayerWorkColor.cgColor
+            shapeLayer.strokeColor = UIColor.LightMode.shapeLayerWorkColor.cgColor
             isBreakMode = false
         }
     }

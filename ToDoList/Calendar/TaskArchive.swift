@@ -42,7 +42,12 @@ class TaskArchive {
 //            "timeStamp": task.timeStamp
         ])
     }
-    
+
+    func removeTask(for id: String) {
+        db.collection("Tasks").document(id).delete()
+    }
+
+
     func getData(from data: [Task]) {
         tasks = data
     }
@@ -55,8 +60,6 @@ class TaskArchive {
         }
     }
 
-
-    
     func toggleTaskStatus(key: String) {
         let task = db.collection("Tasks").document(key)
         task.getDocument { (document, error) in
@@ -98,7 +101,7 @@ class TaskArchive {
     
     init() {
 //        getDataFromFirebase()
-        print(".....")
+//        print(".....")
 //        updateData(key:"6IelLfE78YwE7mpz0DQL", field: "date", value: "2020/06/09 00:00")
 //        deleteAllData()
         

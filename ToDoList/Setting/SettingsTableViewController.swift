@@ -24,15 +24,14 @@ class SettingsTableViewController: UIViewController {
         renderSideMenu()
 
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as? settingItemsTableController
-
-        if let row = tableView.indexPathForSelectedRow?.row{
-            controller?.settingTitle = items[row].title
-        }
-
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let controller = segue.destination as? settingItemsTableController
+//
+//        if let row = tableView.indexPathForSelectedRow?.row{
+//            controller?.settingTitle = items[row].title
+//        }
+//
+//    }
 
     func renderSideMenu() {
         navigationController?.hideNavigationItemBackground()
@@ -94,15 +93,13 @@ extension SettingsTableViewController: UITableViewDelegate, UITableViewDataSourc
         let navVC = UINavigationController()
         switch indexPath.row {
         case 0:
-            // Theme
-            navVC.addChild(settingItemsTableController())
+            // Theme changing
+            navVC.addChild(ThemeSettingViewController())
             self.navigationController?.isNavigationBarHidden = false
-            self.navigationController?.pushViewController(settingItemsTableController(), animated: true)
+            self.navigationController?.pushViewController(ThemeSettingViewController(), animated: true)
         case 1:
             print("About page")
-//
             let DVC = storyboard.instantiateViewController(withIdentifier: "About")
-
             self.navigationController?.isNavigationBarHidden = false
             self.navigationController?.pushViewController(DVC, animated: true)
         default:

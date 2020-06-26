@@ -13,5 +13,6 @@ struct Task {
     var content: String
     var date: String
     var status = false
+    var tags = [String]()
 //    var timeStamp = Date()
 }

@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var menu: SideMenuNavigationController?
 
+
+    var button = AddTaskButton()
       override func viewDidLoad() {
         super.viewDidLoad()
         if isDarkMode() {print("isDarkMode")} else {
@@ -27,6 +29,10 @@ class ViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = menu
         menu?.statusBarEndAlpha = 0
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+
+        button.configureButton(to: view)
+
+
       }
 
 
