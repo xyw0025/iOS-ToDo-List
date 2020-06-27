@@ -188,7 +188,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4g5-W3-bmK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Calendar" selectedImage="Calendar" id="jfJ-s2-ARh"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="Calendar" selectedImage="Calendar" id="jfJ-s2-ARh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addTaskField" destination="wqF-Lk-iQb" id="lGW-Xs-ZQD"/>
@@ -231,6 +231,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Single" id="abf-HL-WvG"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="31e-od-oEk" id="C3w-CV-W5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjV-nr-oIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -285,6 +288,6 @@
         <image name="Tune" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yYd-G1-bXU"/>
+        <segue reference="e2N-Tq-6nS"/>
     </inferredMetricsTieBreakers>
 </document>
