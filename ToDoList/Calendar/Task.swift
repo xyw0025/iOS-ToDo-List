@@ -10,7 +10,7 @@ import Foundation
 struct Task {
     var id: String = ""
     var title: String
-    var content: String
+    var content: String = ""
     var date: String
     var status = false
     var tags = [String]()

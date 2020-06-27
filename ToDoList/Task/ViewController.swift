@@ -8,6 +8,7 @@
 import SideMenu
 import UIKit
 import Firebase
+import BLTNBoard
 
 class ViewController: UIViewController {
 
@@ -16,25 +17,52 @@ class ViewController: UIViewController {
     var taskArchive = TaskArchive()
     let db = Firestore.firestore()
 
+    let page = BLTNDataSource.makeTextFieldPage()
+    lazy var addingTaskBoardManager = BLTNItemManager(rootItem: page)
+
+
 
     var button = AddTaskButton()
-      override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         if isDarkMode() {print("isDarkMode")} else {
-//            print("isntDarkMode")
+            //            print("isntDarkMode")
         }
         renderSideMenu()
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         button.configureButton(to: view)
         checkForUpdates()
         configureTableView()
+        configureBLTN()
+    }
 
-      }
+    func configureBLTN() {
+        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        page.actionHandler = { item in
+            let date = self.page.datePicker.date
+
+            if self.page.titleField.text != "" {
+                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  date.dateAndTimeToString() , tags: [self.page.tagsField.text ?? ""]))
+            }
+
+            item.manager?.dismissBulletin(animated: true)
+        }
+        
+    }
+
+    @objc func buttonClicked(_ sender: UIButton) {
+        addingTaskBoardManager.showBulletin(above: self)
+    }
+
     func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 80
         tableView.register(DailyTaskCell.self, forCellReuseIdentifier: "DailyTaskCell")
     }
+
+
+
     func getDataFromFirebase() {
         db.collection("Tasks").order(by: "date").getDocuments() {
             querySnapshot, error in
@@ -78,16 +106,31 @@ class ViewController: UIViewController {
     func renderSideMenu() {
         menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = false
-
         SideMenuManager.default.leftMenuNavigationController = menu
         menu?.statusBarEndAlpha = 0
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
-
     }
 
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            let deleteTask = self.taskArchive.tasks[indexPath.row]
+            self.taskArchive.removeTask(for: deleteTask.id)
+            completion(true)
+        }
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = .red
+
+
+        return action
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArchive.tasks.count
     }
@@ -112,3 +155,5 @@ extension UIViewController {
         }
     }
 }
+
+

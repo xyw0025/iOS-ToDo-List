@@ -23,4 +23,12 @@ extension Date {
         dateString = renderedFormatter.string(from: self)
         return dateString
     }
+
+    func dateAndTimeToString() -> String {
+        var dateString = ""
+        let renderedFormatter = DateFormatter()
+        renderedFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateString = renderedFormatter.string(from: self)
+        return dateString
+    }
 }

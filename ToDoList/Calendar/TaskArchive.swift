@@ -44,6 +44,10 @@ class TaskArchive {
         ])
     }
 
+    func addDumbTask(from text: String) {
+        addTask(from: Task(title: text, content: "...", date: "2020-06-22 06:23"))
+    }
+
     func removeTask(for id: String) {
         db.collection("Tasks").document(id).delete()
     }

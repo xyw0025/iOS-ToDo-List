@@ -43,7 +43,7 @@ extension UIView {
 
 extension UIView {
     var topAnchorConstraintsConstant: CGFloat { return 65 }
-    var bottomConstraintsConstant: CGFloat {return -30}
+    var bottomConstraintsConstant: CGFloat {return -15}
     var buttonRadius: CGFloat {return 60}
 }
 

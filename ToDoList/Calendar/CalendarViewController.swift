@@ -10,6 +10,7 @@ import UIKit
 import FSCalendar
 import SideMenu
 import Firebase
+import BLTNBoard
 
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITextFieldDelegate {
@@ -27,7 +28,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
     var menu: SideMenuNavigationController?
     var taskArchive = TaskArchive()
-    
+
+    let page = BLTNDataSource.makeTextFieldPage()
+    lazy var addingTaskBoardManager = BLTNItemManager(rootItem: page)
+
 
     @IBAction func addTask(_ sender: UITextField) {
         taskArchive.addTask(from: Task(title: sender.text!, content: "...", date: "2020-06-22 06:23"))
@@ -37,17 +41,31 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         self.calendar.reloadData()
     }
 
+
+    func configureBLTN() {
+        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        page.actionHandler = { item in
+            let date = self.page.datePicker.date
+            if self.page.titleField.text != "" {
+                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  date.dateAndTimeToString() , tags: [self.page.tagsField.text ?? ""]))
+            }
+
+            item.manager?.dismissBulletin(animated: true)
+        }
+
+    }
+    @objc func buttonClicked(_ sender: UIButton) {
+        addingTaskBoardManager.showBulletin(above: self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         checkForUpdates()
 
         renderSideMenu()
-
-//        taskArchive.getDummyData()
-
+        configureBLTN()
         configureTableView()
         configureCalendar()
-        configureTextfield()
         button.configureButton(to: view)
         setTableViewDelegates()
 

@@ -168,16 +168,6 @@
                                 <rect key="frame" x="20" y="44" width="374" height="469"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqF-Lk-iQb">
-                                <rect key="frame" x="162" y="622" width="91" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addTask:" destination="Uas-ZK-vsn" eventType="editingDidEnd" id="a91-UY-ijI"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -191,7 +181,6 @@
                     <tabBarItem key="tabBarItem" tag="2" title="" image="Calendar" selectedImage="Calendar" id="jfJ-s2-ARh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addTaskField" destination="wqF-Lk-iQb" id="lGW-Xs-ZQD"/>
                         <outlet property="calendar" destination="lrF-LV-iuf" id="B6z-37-M8W"/>
                     </connections>
                 </viewController>
