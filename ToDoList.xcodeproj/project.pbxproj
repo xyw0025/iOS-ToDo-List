@@ -18,6 +18,7 @@
 		263B2C8524949D6B003D25C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263B2C8324949D6B003D25C1 /* LaunchScreen.storyboard */; };
 		263B2C9024949D6C003D25C1 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C8F24949D6C003D25C1 /* ToDoListTests.swift */; };
 		263B2C9B24949D6C003D25C1 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */; };
+		26BD84D924A78D7B00BBC46D /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */; };
 		26F1557C24A24C8400D10050 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F1557B24A24C8400D10050 /* Onboarding.storyboard */; };
 		26F1557F24A24CE100D10050 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1557E24A24CE100D10050 /* WelcomeViewController.swift */; };
 		26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558024A24CFE00D10050 /* CalenderViewController.swift */; };
@@ -81,6 +82,7 @@
 		263B2C9624949D6C003D25C1 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		263B2C9C24949D6C003D25C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		26F1557B24A24C8400D10050 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		26F1557E24A24CE100D10050 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		26F1558024A24CFE00D10050 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				26F1557B24A24C8400D10050 /* Onboarding.storyboard */,
+				26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */,
 				26F1557E24A24CE100D10050 /* WelcomeViewController.swift */,
 				26F1558024A24CFE00D10050 /* CalenderViewController.swift */,
 				26F1558224A24D1900D10050 /* ReadyViewController.swift */,
@@ -573,6 +576,7 @@
 				262301FE249B656000DB1E36 /* PomodoroController.swift in Sources */,
 				A260B32024A7510700C1601E /* BLTNDataSource.swift in Sources */,
 				A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */,
+				26BD84D924A78D7B00BBC46D /* PomodoroViewController.swift in Sources */,
 				A273D419249DE53E00275C79 /* StringExtension.swift in Sources */,
 				A2B059CF2498D91A00189945 /* MenuListController.swift in Sources */,
 				A260B32624A752F400C1601E /* FeedbackGenerators.swift in Sources */,

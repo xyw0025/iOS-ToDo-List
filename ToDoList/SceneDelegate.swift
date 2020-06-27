@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let launchStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
-        if launchedBefore
+        if !launchedBefore
         {
             vc = mainStoryboard.instantiateInitialViewController()!
             //            print("y")
@@ -33,8 +33,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //            print("x")
 
         }
-        UserDefaults.standard.set(true, forKey: "hasLaunched")
+        UserDefaults.standard.set(false, forKey: "hasLaunched")
         self.window?.rootViewController = vc
+        
+        self.window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window?.windowScene = windowScene
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
