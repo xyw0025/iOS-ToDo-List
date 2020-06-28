@@ -19,7 +19,7 @@ class PomodoroController: UIViewController {
     var timer = Timer()
     var isTimerStarted = false
     var isReStart = false
-    var time = 20    //2500
+    var time = 1500
     var isBreakMode = false
     let shapeLayer = CAShapeLayer()
     
@@ -132,13 +132,13 @@ class PomodoroController: UIViewController {
     
     func switchMode(mode: Bool) {
         if !isBreakMode {
-            time = 3    //300
+            time = 300
             timeLabel.text = "05:00"
             modeLabel.text = "Break Mode"
             shapeLayer.strokeColor = UIColor.LightMode.shapeLayerBreakColor.cgColor
             isBreakMode = true
         } else {
-            time = 5    //1500
+            time = 1500
             timeLabel.text = "25:00"
             modeLabel.text = "Work Mode"
             shapeLayer.strokeColor = UIColor.LightMode.shapeLayerWorkColor.cgColor
