@@ -29,6 +29,7 @@
 		A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246247F2499352F0098A710 /* FSCalendarExtensions.swift */; };
 		A24B612624988A62009D1D80 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B612524988A62009D1D80 /* SettingCell.swift */; };
 		A24B612B2498AD89009D1D80 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B612A2498AD89009D1D80 /* SettingsTableViewController.swift */; };
+		A25B3FA624A8F08700BA9AFA /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25B3FA524A8F08700BA9AFA /* PomodoroViewController.swift */; };
 		A260B32024A7510700C1601E /* BLTNDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A260B31F24A7510700C1601E /* BLTNDataSource.swift */; };
 		A260B32324A7514000C1601E /* TaskPageBLTNItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A260B32224A7514000C1601E /* TaskPageBLTNItem.swift */; };
 		A260B32624A752F400C1601E /* FeedbackGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A260B32524A752F400C1601E /* FeedbackGenerators.swift */; };
@@ -98,6 +99,7 @@
 		A246247F2499352F0098A710 /* FSCalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarExtensions.swift; sourceTree = "<group>"; };
 		A24B612524988A62009D1D80 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		A24B612A2498AD89009D1D80 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A25B3FA524A8F08700BA9AFA /* PomodoroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		A260B31F24A7510700C1601E /* BLTNDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTNDataSource.swift; sourceTree = "<group>"; };
 		A260B32224A7514000C1601E /* TaskPageBLTNItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPageBLTNItem.swift; sourceTree = "<group>"; };
 		A260B32524A752F400C1601E /* FeedbackGenerators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackGenerators.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				26F1557B24A24C8400D10050 /* Onboarding.storyboard */,
 				26F1557E24A24CE100D10050 /* WelcomeViewController.swift */,
+				A25B3FA524A8F08700BA9AFA /* PomodoroViewController.swift */,
 				26F1558024A24CFE00D10050 /* CalenderViewController.swift */,
 				26F1558224A24D1900D10050 /* ReadyViewController.swift */,
 			);
@@ -609,6 +612,7 @@
 				26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */,
 				A273D41F249DE5E500275C79 /* Task.swift in Sources */,
 				A2B059CD2498D74800189945 /* UIViewExtenstion.swift in Sources */,
+				A25B3FA624A8F08700BA9AFA /* PomodoroViewController.swift in Sources */,
 				A2A6DBCA24A472C600381B29 /* ThemeSettingViewController.swift in Sources */,
 				A2A6DBC824A46EEF00381B29 /* AboutViewController.swift in Sources */,
 			);

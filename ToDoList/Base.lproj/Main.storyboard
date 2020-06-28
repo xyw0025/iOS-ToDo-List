@@ -76,25 +76,6 @@
             </objects>
             <point key="canvasLocation" x="266.66666666666669" y="779.46428571428567"/>
         </scene>
-        <!--Settings Table View Controller-->
-        <scene sceneID="Xl9-UZ-Yph">
-            <objects>
-                <viewController storyboardIdentifier="firstPage" id="Gnd-Hg-H1h" customClass="SettingsTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Haw-KE-s7u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Pte-XX-URe"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ODg-Pv-ge1"/>
-                    <connections>
-                        <segue destination="9nh-oy-s8I" kind="show" id="O2C-q2-ASM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdq-fx-4GU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1371.0144927536232" y="1280.3571428571429"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ifa-N8-cy4">
             <objects>
@@ -111,22 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDe-XI-AiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3425" y="1280"/>
-        </scene>
-        <!--About View Controller-->
-        <scene sceneID="Ff3-mR-Gbr">
-            <objects>
-                <viewController storyboardIdentifier="About" id="9nh-oy-s8I" customClass="AboutViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b4R-GK-o1H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="nii-OC-rap"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="A7Y-ee-qma"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d5N-RE-o1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1371" y="2070"/>
         </scene>
         <!--Menu List Controller-->
         <scene sceneID="gOm-1G-Sp8">
@@ -262,7 +227,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Gnd-Hg-H1h" kind="relationship" relationship="rootViewController" id="7y2-sq-PoA"/>
+                        <segue destination="ng7-sI-ld0" kind="relationship" relationship="rootViewController" id="gyF-RA-OeK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Yt-k6-f23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -320,12 +285,82 @@
             </objects>
             <point key="canvasLocation" x="1174" y="68"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="CzM-a2-1lJ">
+            <objects>
+                <viewController storyboardIdentifier="About" id="ng7-sI-ld0" customClass="AboutViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHh-D2-EbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-Xc-CNh">
+                                <rect key="frame" x="143" y="578" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="ZFg-sM-PIY"/>
+                                    <constraint firstAttribute="height" constant="128" id="bSH-Kb-HDM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="國立臺北科技大學" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-x8-8dp">
+                                <rect key="frame" x="50" y="208" width="203" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="資訊工程系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wg-6R-ZKj">
+                                <rect key="frame" x="50" y="268" width="127" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 應用程式開發" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-Wi-ucN">
+                                <rect key="frame" x="50" y="348" width="198" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105590451 蔡佩珊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byp-nX-iW3">
+                                <rect key="frame" x="50" y="438" width="215" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105350023 溫心瑀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-rL-kyh">
+                                <rect key="frame" x="50" y="498" width="218" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KyJ-Wi-ucN" firstAttribute="top" secondItem="1Wg-6R-ZKj" secondAttribute="bottom" constant="50" id="0n8-wM-jHQ"/>
+                            <constraint firstItem="KyJ-Wi-ucN" firstAttribute="leading" secondItem="19Q-jm-cRG" secondAttribute="leading" constant="50" id="43P-Uk-sqJ"/>
+                            <constraint firstItem="dUC-rL-kyh" firstAttribute="leading" secondItem="19Q-jm-cRG" secondAttribute="leading" constant="50" id="4JX-NW-bTq"/>
+                            <constraint firstItem="Aur-Xc-CNh" firstAttribute="top" secondItem="dUC-rL-kyh" secondAttribute="bottom" constant="50" id="7Pg-ps-BrE"/>
+                            <constraint firstItem="1Wg-6R-ZKj" firstAttribute="top" secondItem="aoY-x8-8dp" secondAttribute="bottom" constant="30" id="POv-aA-rJr"/>
+                            <constraint firstItem="aoY-x8-8dp" firstAttribute="top" secondItem="19Q-jm-cRG" secondAttribute="top" constant="120" id="QHA-jG-kx2"/>
+                            <constraint firstItem="byp-nX-iW3" firstAttribute="top" secondItem="KyJ-Wi-ucN" secondAttribute="bottom" constant="60" id="VfF-72-2Ij"/>
+                            <constraint firstItem="aoY-x8-8dp" firstAttribute="leading" secondItem="19Q-jm-cRG" secondAttribute="leading" constant="50" id="d1h-dd-zRQ"/>
+                            <constraint firstItem="1Wg-6R-ZKj" firstAttribute="leading" secondItem="19Q-jm-cRG" secondAttribute="leading" constant="50" id="khC-Vs-2p7"/>
+                            <constraint firstItem="byp-nX-iW3" firstAttribute="leading" secondItem="19Q-jm-cRG" secondAttribute="leading" constant="50" id="kkN-28-5nC"/>
+                            <constraint firstItem="dUC-rL-kyh" firstAttribute="top" secondItem="byp-nX-iW3" secondAttribute="bottom" constant="30" id="uUf-7P-qFi"/>
+                            <constraint firstItem="Aur-Xc-CNh" firstAttribute="centerX" secondItem="nHh-D2-EbQ" secondAttribute="centerX" id="v8I-go-BLi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="19Q-jm-cRG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yRS-Ck-fHo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifm-2W-iOL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2243" y="2046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Calendar" width="24" height="24"/>
         <image name="TickBox" width="26" height="26"/>
         <image name="Timer" width="24" height="24"/>
         <image name="Tune" width="30" height="30"/>
+        <image name="icon" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e2N-Tq-6nS"/>

@@ -15,17 +15,17 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(textLabel)
         configureTextLabel()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TestTEstTEST", style: .plain, target: nil, action: nil)
-        navigationItem.title = "TestTest TEST"
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TestTEstTEST", style: .plain, target: nil, action: nil)
+        navigationItem.title = "About"
     }
     func configureTextLabel() {
         textLabel.pin(to: view)
-        textLabel.text = "TestTEstTEST"
         textLabel.textAlignment = .center
     }
 
-    
+
 
 
 
 }
+
