@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     let page = BLTNDataSource.makeTextFieldPage()
     lazy var addingTaskBoardManager = BLTNItemManager(rootItem: page)
 
-
+    var contentPage = BLTNDataSource.contentPage(id: "", task: Task(title: "", date: ""))
+    lazy var taskContentBoardManager = BLTNItemManager(rootItem: contentPage)
 
     var button = AddTaskButton()
     override func viewDidLoad() {
@@ -34,25 +35,34 @@ class ViewController: UIViewController {
         checkForUpdates()
         configureTableView()
         configureBLTN()
+        configureContentBLTN()
     }
 
     func configureBLTN() {
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         page.actionHandler = { item in
-            let date = self.page.datePicker.date
-
             if self.page.titleField.text != "" {
-                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  date.dateAndTimeToString() , tags: [self.page.tagsField.text ?? ""]))
+                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  self.page.dateField.text ?? "" , tags: [self.page.tagsField.text ?? ""]))
             }
-
             item.manager?.dismissBulletin(animated: true)
         }
-        
     }
 
     @objc func buttonClicked(_ sender: UIButton) {
         addingTaskBoardManager.showBulletin(above: self)
     }
+
+    func configureContentBLTN() {
+        contentPage.actionHandler = { item in
+            if self.contentPage.titleField.text != "" {
+                self.taskArchive.updateAllData(data: self.contentPage.task)
+            }
+            item.manager?.dismissBulletin(animated: true)
+        }
+
+    }
+
+
 
     func configureTableView() {
         tableView.delegate = self
@@ -92,17 +102,11 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-
-
 
     override func viewWillAppear(_ animated: Bool) {
         let tabBar = tabBarController as! HomeTabBarController
         taskArchive = tabBar.taskArchive
     }
-
-    
     func renderSideMenu() {
         menu = SideMenuNavigationController(rootViewController: MenuListController())
         menu?.leftSide = false
@@ -110,7 +114,20 @@ class ViewController: UIViewController {
         menu?.statusBarEndAlpha = 0
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTask = taskArchive.tasks[indexPath.row]
+        contentPage = BLTNDataSource.contentPage(id: selectedTask.id, task: selectedTask)
+        taskContentBoardManager = BLTNItemManager(rootItem: contentPage)
+        taskContentBoardManager.showBulletin(above: self)
 
+        contentPage.actionHandler = { item in
+            //                 if self.contentPage.titleField.text != "" {
+            self.taskArchive.updateAllData(data: self.contentPage.task)
+//            print("self.contentPage.task",self.contentPage.task)
+            //                 }
+            item.manager?.dismissBulletin(animated: true)
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -134,6 +151,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArchive.tasks.count
     }
+
+
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DailyTaskCell") as! DailyTaskCell

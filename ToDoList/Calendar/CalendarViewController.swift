@@ -33,6 +33,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     lazy var addingTaskBoardManager = BLTNItemManager(rootItem: page)
 
 
+    var contentPage = BLTNDataSource.contentPage(id: "", task: Task(title: "", date: ""))
+    lazy var taskContentBoardManager = BLTNItemManager(rootItem: contentPage)
+
+
+
+
     @IBAction func addTask(_ sender: UITextField) {
         taskArchive.addTask(from: Task(title: sender.text!, content: "...", date: "2020-06-22 06:23"))
         sender.text = ""
@@ -45,9 +51,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     func configureBLTN() {
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         page.actionHandler = { item in
-            let date = self.page.datePicker.date
             if self.page.titleField.text != "" {
-                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  date.dateAndTimeToString() , tags: [self.page.tagsField.text ?? ""]))
+                self.taskArchive.addTask(from: Task(title: self.page.titleField.text ?? "new task", content: self.page.contentField.text ?? "", date:  self.page.dateField.text ?? "", tags: [self.page.tagsField.text ?? ""]))
             }
 
             item.manager?.dismissBulletin(animated: true)
@@ -57,6 +62,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @objc func buttonClicked(_ sender: UIButton) {
         addingTaskBoardManager.showBulletin(above: self)
     }
+    func configureContentBLTN() {
+        contentPage.actionHandler = { item in
+            if self.contentPage.titleField.text != "" {
+                self.taskArchive.updateAllData(data: self.contentPage.task)
+            }
+            item.manager?.dismissBulletin(animated: true)
+        }
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +78,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
         renderSideMenu()
         configureBLTN()
+        configureContentBLTN()
+
         configureTableView()
         configureCalendar()
         button.configureButton(to: view)
@@ -231,10 +247,21 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setTask(to: day)
         return cell
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTask = taskArchive.tasks[indexPath.row]
+        contentPage = BLTNDataSource.contentPage(id: selectedTask.id, task: selectedTask)
+        taskContentBoardManager = BLTNItemManager(rootItem: contentPage)
+        taskContentBoardManager.showBulletin(above: self)
         
+        contentPage.actionHandler = { item in
+            //                 if self.contentPage.titleField.text != "" {
+            self.taskArchive.updateAllData(data: self.contentPage.task)
+            //            print("self.contentPage.task",self.contentPage.task)
+            //                 }
+            item.manager?.dismissBulletin(animated: true)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
     }
 }
 

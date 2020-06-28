@@ -27,4 +27,15 @@ enum BLTNDataSource {
 
         return page
     }
+
+
+    static func contentPage(id: String, task: Task) -> TaskContentPageItem {
+
+        let page = TaskContentPageItem(id: id, t: task)
+        page.isDismissable = true
+        page.actionButtonTitle = "Update"
+
+        return page
+
+    }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qm-wa-dUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxf-d8-FgW">
-                                <rect key="frame" x="70" y="671" width="58" height="42"/>
+                                <rect key="frame" x="70" y="671" width="59" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="tintColor" red="1" green="0.52156862749999999" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Start">
@@ -119,60 +119,7 @@
                     <view key="view" contentMode="scaleToFill" id="b4R-GK-o1H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="jpY-FO-4c4">
-                                <rect key="frame" x="143" y="578" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="Nra-rD-3hq"/>
-                                    <constraint firstAttribute="height" constant="128" id="c53-JA-gNU"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="國立臺北科技大學" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ca-TK-tZN">
-                                <rect key="frame" x="50" y="208" width="203" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="資訊工程系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qm-Q7-4m2">
-                                <rect key="frame" x="50" y="268" width="127" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS 應用程式開發" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptB-kk-IrQ">
-                                <rect key="frame" x="50" y="348" width="198" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105590451 蔡佩珊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psy-xI-aob">
-                                <rect key="frame" x="50" y="438" width="215" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105350023 溫心瑀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-Oz-kaw">
-                                <rect key="frame" x="50" y="498" width="218" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="jpY-FO-4c4" firstAttribute="centerX" secondItem="b4R-GK-o1H" secondAttribute="centerX" id="2td-Ga-h8s"/>
-                            <constraint firstItem="Psy-xI-aob" firstAttribute="leading" secondItem="nii-OC-rap" secondAttribute="leading" constant="50" id="8iX-Rx-pg8"/>
-                            <constraint firstItem="ptB-kk-IrQ" firstAttribute="top" secondItem="0Qm-Q7-4m2" secondAttribute="bottom" constant="50" id="8nA-eC-WAS"/>
-                            <constraint firstItem="ptB-kk-IrQ" firstAttribute="leading" secondItem="nii-OC-rap" secondAttribute="leading" constant="50" id="COA-rY-x1M"/>
-                            <constraint firstItem="jpY-FO-4c4" firstAttribute="top" secondItem="mnF-Oz-kaw" secondAttribute="bottom" constant="50" id="Iv1-jy-DN5"/>
-                            <constraint firstItem="0Qm-Q7-4m2" firstAttribute="leading" secondItem="nii-OC-rap" secondAttribute="leading" constant="50" id="P8L-6s-dEV"/>
-                            <constraint firstItem="mnF-Oz-kaw" firstAttribute="leading" secondItem="nii-OC-rap" secondAttribute="leading" constant="50" id="QcH-GV-B5y"/>
-                            <constraint firstItem="Psy-xI-aob" firstAttribute="top" secondItem="ptB-kk-IrQ" secondAttribute="bottom" constant="60" id="WvO-Rn-cYB"/>
-                            <constraint firstItem="mnF-Oz-kaw" firstAttribute="top" secondItem="Psy-xI-aob" secondAttribute="bottom" constant="30" id="ZeD-Ve-LJY"/>
-                            <constraint firstItem="7ca-TK-tZN" firstAttribute="leading" secondItem="nii-OC-rap" secondAttribute="leading" constant="50" id="b6d-VR-CyW"/>
-                            <constraint firstItem="7ca-TK-tZN" firstAttribute="top" secondItem="nii-OC-rap" secondAttribute="top" constant="120" id="wAN-Dh-RQk"/>
-                            <constraint firstItem="0Qm-Q7-4m2" firstAttribute="top" secondItem="7ca-TK-tZN" secondAttribute="bottom" constant="30" id="z6y-ss-HRV"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nii-OC-rap"/>
                     </view>
                     <navigationItem key="navigationItem" id="A7Y-ee-qma"/>
@@ -322,13 +269,63 @@
             </objects>
             <point key="canvasLocation" x="-2281.1594202898555" y="1280.3571428571429"/>
         </scene>
+        <!--Calendar Picker View Controller-->
+        <scene sceneID="Eya-fs-255">
+            <objects>
+                <viewController storyboardIdentifier="timepicker" id="jEr-Jj-mdj" customClass="CalendarPickerViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bW6-XP-OQc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yq-sD-1nh" customClass="FSCalendar">
+                                <rect key="frame" x="44" y="236" width="326" height="281"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-JH-qx6">
+                                <rect key="frame" x="0.0" y="625" width="414" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="timePicker:" destination="jEr-Jj-mdj" eventType="valueChanged" id="qhm-8Z-RfR"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPK-oz-n0F">
+                                <rect key="frame" x="164" y="812" width="86" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="pressedDone:" destination="jEr-Jj-mdj" eventType="touchUpInside" id="y0a-EY-h3f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0CR-JH-qx6" firstAttribute="centerX" secondItem="oZ5-vU-Wys" secondAttribute="centerX" id="9oi-Zl-YCR"/>
+                            <constraint firstItem="oZ5-vU-Wys" firstAttribute="bottom" secondItem="0CR-JH-qx6" secondAttribute="bottom" constant="75" id="JiQ-kD-Fyr"/>
+                            <constraint firstItem="2yq-sD-1nh" firstAttribute="top" secondItem="oZ5-vU-Wys" secondAttribute="top" constant="279" id="Njp-nV-a1P"/>
+                            <constraint firstItem="0CR-JH-qx6" firstAttribute="top" secondItem="2yq-sD-1nh" secondAttribute="bottom" constant="21" id="QVK-Bs-MAe"/>
+                            <constraint firstItem="2yq-sD-1nh" firstAttribute="leading" secondItem="oZ5-vU-Wys" secondAttribute="leading" constant="69" id="RV2-cX-ICa"/>
+                            <constraint firstItem="oZ5-vU-Wys" firstAttribute="bottom" secondItem="HPK-oz-n0F" secondAttribute="bottom" constant="20" id="gHe-cB-nCR"/>
+                            <constraint firstItem="2yq-sD-1nh" firstAttribute="leading" secondItem="oZ5-vU-Wys" secondAttribute="leading" constant="44" id="oNN-DB-jWA"/>
+                            <constraint firstItem="2yq-sD-1nh" firstAttribute="centerX" secondItem="oZ5-vU-Wys" secondAttribute="centerX" id="pk9-Gd-47g"/>
+                            <constraint firstItem="HPK-oz-n0F" firstAttribute="centerX" secondItem="oZ5-vU-Wys" secondAttribute="centerX" id="qfs-V2-RDD"/>
+                            <constraint firstItem="HPK-oz-n0F" firstAttribute="top" secondItem="0CR-JH-qx6" secondAttribute="bottom" constant="8" id="wkn-2N-fTa"/>
+                            <constraint firstItem="oZ5-vU-Wys" firstAttribute="bottom" secondItem="2yq-sD-1nh" secondAttribute="bottom" constant="258" id="z8v-36-DUh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oZ5-vU-Wys"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="2yq-sD-1nh" id="Sfx-zd-vOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2od-73-CUo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="68"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Calendar" width="24" height="24"/>
         <image name="TickBox" width="26" height="26"/>
         <image name="Timer" width="24" height="24"/>
         <image name="Tune" width="30" height="30"/>
-        <image name="icon" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e2N-Tq-6nS"/>

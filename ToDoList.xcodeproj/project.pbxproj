@@ -18,13 +18,13 @@
 		263B2C8524949D6B003D25C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263B2C8324949D6B003D25C1 /* LaunchScreen.storyboard */; };
 		263B2C9024949D6C003D25C1 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C8F24949D6C003D25C1 /* ToDoListTests.swift */; };
 		263B2C9B24949D6C003D25C1 /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */; };
-		26BD84D924A78D7B00BBC46D /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */; };
 		26F1557C24A24C8400D10050 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F1557B24A24C8400D10050 /* Onboarding.storyboard */; };
 		26F1557F24A24CE100D10050 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1557E24A24CE100D10050 /* WelcomeViewController.swift */; };
 		26F1558124A24CFE00D10050 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558024A24CFE00D10050 /* CalenderViewController.swift */; };
 		26F1558324A24D1900D10050 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558224A24D1900D10050 /* ReadyViewController.swift */; };
 		26F1558524A2503000D10050 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1558424A2503000D10050 /* HomeTabBarController.swift */; };
 		6FF86F37DAABB89A890BDDA7 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43176FF46E5131EF60D792E /* Pods_ToDoList.framework */; };
+		A234466F24A77AA10060E04C /* TaskContentPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A234466E24A77AA10060E04C /* TaskContentPageItem.swift */; };
 		A246247E24992F420098A710 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246247D24992F420098A710 /* UIColorExtension.swift */; };
 		A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246247F2499352F0098A710 /* FSCalendarExtensions.swift */; };
 		A24B612624988A62009D1D80 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B612524988A62009D1D80 /* SettingCell.swift */; };
@@ -43,6 +43,7 @@
 		A2B059CF2498D91A00189945 /* MenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B059CE2498D91A00189945 /* MenuListController.swift */; };
 		A2E5067B24991010007507E2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E5067A24991010007507E2 /* CalendarViewController.swift */; };
 		A2E5068024992700007507E2 /* DailyTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E5067F24992700007507E2 /* DailyTaskCell.swift */; };
+		A2FA7A2224A86F5E006122A4 /* CalendarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FA7A2124A86F5E006122A4 /* CalendarPickerViewController.swift */; };
 		A2FB9B8724A63EEC0085D040 /* AddTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FB9B8624A63EEC0085D040 /* AddTaskButton.swift */; };
 		D41B1EA13DB483A7A8270574 /* Pods_ToDoListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDA84E84265296522B11723 /* Pods_ToDoListTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,7 +83,6 @@
 		263B2C9624949D6C003D25C1 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263B2C9A24949D6C003D25C1 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		263B2C9C24949D6C003D25C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		26F1557B24A24C8400D10050 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		26F1557E24A24CE100D10050 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		26F1558024A24CFE00D10050 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 		63014A5B8096A23DB4E937AF /* Pods-ToDoList-ToDoListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList-ToDoListUITests.release.xcconfig"; path = "Target Support Files/Pods-ToDoList-ToDoListUITests/Pods-ToDoList-ToDoListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6893F339DE10E274F2D39E43 /* Pods_ToDoList_ToDoListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList_ToDoListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96327F9EA17A90C8526D186F /* Pods-ToDoListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoListTests/Pods-ToDoListTests.release.xcconfig"; sourceTree = "<group>"; };
+		A234466E24A77AA10060E04C /* TaskContentPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContentPageItem.swift; sourceTree = "<group>"; };
 		A246247D24992F420098A710 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A246247F2499352F0098A710 /* FSCalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarExtensions.swift; sourceTree = "<group>"; };
 		A24B612524988A62009D1D80 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		A2B059CE2498D91A00189945 /* MenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListController.swift; sourceTree = "<group>"; };
 		A2E5067A24991010007507E2 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		A2E5067F24992700007507E2 /* DailyTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTaskCell.swift; sourceTree = "<group>"; };
+		A2FA7A2124A86F5E006122A4 /* CalendarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerViewController.swift; sourceTree = "<group>"; };
 		A2FB9B8624A63EEC0085D040 /* AddTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTaskButton.swift; path = ToDoList/AddTaskButton.swift; sourceTree = "<group>"; };
 		C43176FF46E5131EF60D792E /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53CD909C3EF17F3A2F118F5 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		263B2C7424949D64003D25C1 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				A2FA7A2324A8B8F9006122A4 /* Model */,
 				A2FB9B8A24A643130085D040 /* Task */,
 				262301FC249B642900DB1E36 /* Pomodoro */,
 				A2E5067C249911A7007507E2 /* Calendar */,
@@ -223,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				26F1557B24A24C8400D10050 /* Onboarding.storyboard */,
-				26BD84D824A78D7B00BBC46D /* PomodoroViewController.swift */,
 				26F1557E24A24CE100D10050 /* WelcomeViewController.swift */,
 				26F1558024A24CFE00D10050 /* CalenderViewController.swift */,
 				26F1558224A24D1900D10050 /* ReadyViewController.swift */,
@@ -260,6 +262,8 @@
 			children = (
 				A260B31F24A7510700C1601E /* BLTNDataSource.swift */,
 				A260B32224A7514000C1601E /* TaskPageBLTNItem.swift */,
+				A234466E24A77AA10060E04C /* TaskContentPageItem.swift */,
+				A2FA7A2124A86F5E006122A4 /* CalendarPickerViewController.swift */,
 			);
 			path = BLTN;
 			sourceTree = "<group>";
@@ -295,12 +299,19 @@
 			isa = PBXGroup;
 			children = (
 				A2E5067A24991010007507E2 /* CalendarViewController.swift */,
-				A273D41E249DE5E500275C79 /* Task.swift */,
-				A273D41C249DE59100275C79 /* TaskArchive.swift */,
 				A2E5067F24992700007507E2 /* DailyTaskCell.swift */,
 				A246247F2499352F0098A710 /* FSCalendarExtensions.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A2FA7A2324A8B8F9006122A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A273D41E249DE5E500275C79 /* Task.swift */,
+				A273D41C249DE59100275C79 /* TaskArchive.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A2FB9B8524A63EB10085D040 /* addTaskButton */ = {
@@ -574,9 +585,9 @@
 				A273D41D249DE59100275C79 /* TaskArchive.swift in Sources */,
 				26F1557F24A24CE100D10050 /* WelcomeViewController.swift in Sources */,
 				262301FE249B656000DB1E36 /* PomodoroController.swift in Sources */,
+				A2FA7A2224A86F5E006122A4 /* CalendarPickerViewController.swift in Sources */,
 				A260B32024A7510700C1601E /* BLTNDataSource.swift in Sources */,
 				A24624802499352F0098A710 /* FSCalendarExtensions.swift in Sources */,
-				26BD84D924A78D7B00BBC46D /* PomodoroViewController.swift in Sources */,
 				A273D419249DE53E00275C79 /* StringExtension.swift in Sources */,
 				A2B059CF2498D91A00189945 /* MenuListController.swift in Sources */,
 				A260B32624A752F400C1601E /* FeedbackGenerators.swift in Sources */,
@@ -586,6 +597,7 @@
 				A260B32324A7514000C1601E /* TaskPageBLTNItem.swift in Sources */,
 				263B2C7824949D65003D25C1 /* SceneDelegate.swift in Sources */,
 				263B2C8024949D65003D25C1 /* ToDoList.xcdatamodeld in Sources */,
+				A234466F24A77AA10060E04C /* TaskContentPageItem.swift in Sources */,
 				A273D41B249DE55300275C79 /* DateExtension.swift in Sources */,
 				A24B612624988A62009D1D80 /* SettingCell.swift in Sources */,
 				26F1558324A24D1900D10050 /* ReadyViewController.swift in Sources */,
